@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FeedbackerTest < ActiveSupport::TestCase
+class FeedbackRequestTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

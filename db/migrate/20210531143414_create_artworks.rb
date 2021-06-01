@@ -3,7 +3,8 @@ class CreateArtworks < ActiveRecord::Migration[6.0]
     create_table :artworks do |t|
       t.string :title
       t.text :description
-      t.boolean :privacy
+      t.text :request
+      t.boolean :privacy, default: true
       t.integer :version
       t.references :user, null: false, foreign_key: true
 
