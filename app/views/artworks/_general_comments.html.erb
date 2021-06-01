@@ -1,0 +1,8 @@
+  <% @artwork.comments.each do |comment| %> 
+    <% if comment.x_offset == nil && comment.y_offset == nil %>
+      <div class="d-flex mt-3">
+        <%= image_tag("https://source.unsplash.com/0fN7Fxv1eWA/300x300", class: 'mr-5', :alt => "profile picture", style: 'object-fit: cover; width: 75px; height: 75px') %>
+        <p><%= comment.content %></p>
+      </div>
+    <% end %>
+  <% end %>
