@@ -35,6 +35,6 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:restaurant).permit(:title, :description, :version, :privacy, :request)
+    params.require(:restaurant).permit(:title, :description, :version, :privacy, :request, photos: [])
   end
 end
