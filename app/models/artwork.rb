@@ -4,5 +4,5 @@ class Artwork < ApplicationRecord
   has_many :comments, dependent: :destroy
   validates :title, presence: true
   validates :description, presence: true
-  validates :description, length: { minimum: 50 }
+  validates :description, length: { minimum: 10 }
 end

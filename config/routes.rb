@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'artworks#index'
   get '/profile', to: 'pages#profile'
   resources :artworks, only: [:index, :new, :show] do 
     resources :comments, only: [:create]

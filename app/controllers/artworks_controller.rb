@@ -1,8 +1,10 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
+  skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @artworks = Artworks.all
+    @artworks = Artwork.all
+    @comment = Comment.new
   end
 
   def show
