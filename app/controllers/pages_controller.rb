@@ -6,4 +6,9 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def brandguidelines
+    @comment = Comment.new
+    @artwork = Artwork.find(1)
+  end
 end

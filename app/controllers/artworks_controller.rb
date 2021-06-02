@@ -2,10 +2,11 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
 
   def index
-    @artworks = Artworks.all
+    @artworks = Artwork.all
   end
 
   def show
+    @comment = Comment.new
   end
 
   def new
@@ -17,7 +18,7 @@ class ArtworksController < ApplicationController
     @artwork.user = current_user
 
     if @artwork.save
-      render :show
+      redirect_to artwork_path(@artwork)
     else
       render :new
     end
@@ -35,6 +36,6 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:restaurant).permit(:title, :description, :version, :privacy, :request)
+    params.require(:artwork).permit(:title, :description, :version, :privacy, :request, photos: [])
   end
 end
