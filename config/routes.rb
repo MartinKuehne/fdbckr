@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/profile', to: 'pages#profile'
+  get '/brandguidelines', to: 'pages#brandguidelines'
   resources :artworks, only: [:index, :new, :create, :show] do 
     resources :comments, only: [:create]
   end

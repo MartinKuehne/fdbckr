@@ -1,0 +1,208 @@
+/* Logo */
+
+p.logo {
+  font-family: 'Roboto',sans-serif;
+  font-weight: 900;
+  color:#000000;
+  font-size: 24px;
+  transform: scale(1, 1.2);
+  -webkit-transform: scale(1, 1.2); /* Safari and Chrome */
+  -moz-transform: scale(1, 1.2); /* Firefox */
+  -ms-transform: scale(1, 1.2); /* IE 9+ */
+  -o-transform: scale(1, 1.2); /* Opera */
+}
+
+/* Button Primary */
+
+a.button-primary {
+  display: inline-block;
+  /* box-shadow: -3px 4px 0px 0px #000000; */
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  border-radius: 8px;
+  background-color: #D7ECFF;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Button Primary with Shadow*/
+
+.button-wrapper {
+  position: relative;
+}
+
+a.button-shadow {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  z-index: -1;
+  position: absolute;
+  top: 5px;
+  left: -5px;
+}
+
+/* Button Secondary */
+
+a.button-secondary {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  border-radius: 8px;
+  background-color: #E8D7FF;
+  cursor: pointer;
+}
+
+@media all and (max-width:30em) {
+  a.button {
+  display:block;
+  margin:0.4em auto;
+  }
+}
+
+/* Avatar/Profile Picture */
+
+img.profile {
+  object-fit: cover;
+  height: 75px;
+  width: 75px;
+}
+
+/* Avatar with notification */
+.profile-image {
+  position: relative;
+  padding-top: 20px;
+  display: inline-block;
+}
+.notify-badge{
+  position: absolute;
+  right: -12px;
+  top: 10px;
+  background: red;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  padding: 2px 8px;
+  font-size: 13px;
+}
+
+/* Form -> How to select button?!*/
+
+.simple-form.btn {
+  display: inline-block !important;  
+  padding: 0.5em 3em !important;
+  border: 0.12em solid #000000 !important;
+  margin: 0 0.3em 0.3em 0 !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+  font-family: 'Roboto',sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  color: #000000 !important;
+  text-align: center !important;
+  transition: all 0.15s !important;
+  border-radius: 8px !important;
+  background-color: #D7ECFF !important;
+  cursor: pointer !important;
+}
+
+/* Comment */
+
+p.comment {
+  font-family: Roboto, sans-serif;
+}
+
+/* Centered Content */
+p.centered-content {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  width: 600px;
+}
+
+/* Top Description Section */
+.top-description {
+  h1 {
+    font-size: 2.3rem !important;
+    font-weight: 700 !important;
+    font-family: 'Roboto',sans-serif !important;
+    margin-bottom: 0px !important;
+  }
+  a {
+    font-size: 1.2rem !important;
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 700 !important;
+    color: black !important;
+  }
+  p {
+    font-size: 1.2rem !important;
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* Navbar */
+
+.navbar {
+  padding: 0px 1rem;
+  border-bottom-style: solid;
+}
+
+.navbar-brand {
+  border-right-style: solid;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.nav-link {
+  margin-left: 50px !important;
+}
+
+.left-border {
+  border-left-style: solid;
+}
+
+a.nav-link {
+  font-size: 1.15rem;
+}
