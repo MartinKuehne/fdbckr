@@ -24,3 +24,6 @@ artwork.photo.attach(io: file, filename: 'sth.png', content_type: 'image/png')
 # Here we write article.photo.attach cause we used the has_one_attached :photo relationship in our model
 =end
 
+file = URI.open('https://source.unsplash.com/X6Uj51n5CE8/300x300')
+u1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+

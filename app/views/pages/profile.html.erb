@@ -2,8 +2,11 @@
   <!-- Content here -->
   <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
     <div class="d-flex">
-      <% if current_user.photo? %>
-      <% cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if current_user.photo.attached? %>
+        <% cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <img src="https://source.unsplash.com/X6Uj51n5CE8/150x150" class="img-thumbnail" alt="Profile Picture">
+      <% end %>
       <!-- <img src="https://source.unsplash.com/X6Uj51n5CE8/150x150" class="img-thumbnail" alt="Profile Picture"> -->
     </div>
     <div class="d-flex flex-column bd-highlight flex-grow-1 ml-2">
