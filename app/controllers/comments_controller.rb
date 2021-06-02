@@ -12,6 +12,15 @@ class CommentsController < ApplicationController
     redirect_to artwork_path(@artwork)
   end
 
+  def create_index
+    @comment = Comment.new(comment_params)
+    @artwork = Artwork.find(params[:artwork_id])
+    @comment.artwork = @artwork
+    @comment.user = current_user
+    @comment.save
+    redirect_to root_path
+  end
+
   private
 
   def comment_params
