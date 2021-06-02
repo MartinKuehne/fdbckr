@@ -7,6 +7,14 @@ class ArtworksController < ApplicationController
 
   def show
     @comment = Comment.new
+
+    @general_comments = @artwork.comments.map do |comment|
+      comment if comment.x_offset.nil? && comment.y_offset.nil?
+    end
+
+    @marked_comments = @artwork.comments.map do |comment|
+      comment unless comment.x_offset.nil? || comment.y_offset.nil?
+    end
   end
 
   def new

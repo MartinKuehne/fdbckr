@@ -1,0 +1,158 @@
+<div class="container">
+
+  <h2 class="mt-3">Logo</h2>
+  <p class="logo">fdbckr.</p>
+
+  <h2 class="mt-3">Primary button</h2>
+  <a href="#" class="button-primary">Follow</a>
+
+  <h2 class="mt-3">Primary button with Shadow</h2>
+  <div class="button-wrapper">
+    <a href="#" class="button-primary">Follow</a>
+    <a href="#" class="button-shadow">Follow</a>
+  </div>
+
+  <h2 class="mt-3">Secondary button</h2>
+  <a href="#" class="button-secondary">Upload your art</a>
+
+  <h2 class="mt-3">Secondary button with shadow</h2>
+  <div class="button-wrapper">
+    <a href="#" class="button-secondary">Upload your art</a>
+    <a href="#" class="button-shadow">Upload your art</a>
+  </div>
+
+  <h2 class="mt-3">Avatar</h2>
+  <img class="profile" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+  <!-- ALTERNATIVE -->
+  <!--  <%= image_tag(@artwork.user.avatar, class: 'profile') %> -->
+
+  <h2 class="mt-3">Avatar with Notification</h2>
+  <div class="profile-image">
+  	<a href="#">
+		<span class="notify-badge">1</span>
+      <img class="profile" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+        <!-- ALTERNATIVE -->
+        <!--  <%= image_tag(@artwork.user.avatar, class: 'profile') %> -->
+	  </a>
+	</div>
+
+  <h2 class="mt-3">Form</h2>
+  <div class="d-flex mt-3">
+    <img class="profile mr-3" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+    <%= simple_form_for [@artwork, @comment], html: { class: 'd-flex flex-column flex-grow-1' } do |f| %>
+      <%= f.input :content, input_html: { class: 'flex-grow-1' }, placeholder: 'What would you like to say about this piece?', label: false %>
+      <%= f.button :submit, input_html: { class: 'justify-content-center mb-3' } %>
+    <% end %>
+  </div>
+
+  <h2 class="mt-3">Comment</h2>
+  <div class="d-flex mt-3">
+    <img class="profile mr-3" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+      <!-- ALTERNATIVE -->
+      <!--  <%= image_tag(@artwork.user.avatar, class: 'profile mr-3') %> -->
+    <p class="comment ml-3">For a first digital piece this looks pretty solid. Like a couple of the other comments said, there is definitely way too much use of the texture brushes. The colors are also very vibrant, you could try and experiment with different tints and shades and different colors for shadow. The tree shape also feels a bit artificial, I would recommend using some references to get a more natural look if that makes any sense. overall, very nice for a first digital painting.</p>
+  </div>
+
+  <h2 class="mt-3">Centered Content</h2>
+  <div class="d-flex justify-content-center">
+    <p class="centered-content">I am an artist based in Hamburg and Berlin. I work primarily with lavender and I only collaborate with those that know how to appreciate it. All feedback welcome!</p>
+  </div>
+
+  <h2 class="mt-3">Top Description Section</hh2>
+  <div class="d-flex mt-5">
+    <img class="profile" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+      <!-- ALTERNATIVE -->
+      <!--  <%= image_tag(@artwork.user.avatar, class: 'profile') %> -->
+    <div class="container ml-3 top-description">
+      <h1>My greatest artwork title</h1>
+      <p>@<%= link_to 'martin', "#" %></p>
+    </div>
+    <div class="button-wrapper">
+      <a href="#" class="button-primary">Follow</a>
+      <a href="#" class="button-shadow">Follow</a>
+    </div>
+  </div>
+
+  <h2 class="mt-3">Navbar</h2>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <p class="logo mt-3 ml-5 mr-5">fdbckr.</p>
+  <% end %>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <%= link_to "Home", root_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item active">
+      <%= link_to "Artists", root_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item active">
+      <%= link_to "Artworks", root_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item active">
+      <%= link_to "Support", root_path, class: "nav-link" %>
+    </li>
+  </ul>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  <h2 class="mt-3">Grid</h2>
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+
+        <img src="https://source.unsplash.com/xb0wLfZH9Zo/900x600" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.1s">
+
+        <img src="https://source.unsplash.com/tKgcMR8saYA/600x900" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.4s">
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+
+        <img src="https://source.unsplash.com/wN9DU73b8_s/600x900" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.2s">
+
+        <img src="https://source.unsplash.com/ineC_oi7NHs/900x600" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.5s">
+
+      </div>
+      <!--Grid column-->
+
+        <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+
+        <img src="https://source.unsplash.com/woMD-vhzOHI/900x600" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.1s">
+        
+        <img src="https://source.unsplash.com/1rBg5YSi00c/600x900" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.4s">
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+  <h2 class="mt-3">End</h2>
+</div>

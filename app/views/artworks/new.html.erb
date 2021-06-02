@@ -7,7 +7,7 @@
         <%= f.input :title, label: 'Title', placeholder: "Title" %>
         <%= f.input :description, label: 'Description', placeholder: "What is your work about?" %>
         <%= f.input :request, placeholder: "Is there any specific feedback you are looking for?" %>
-        <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.input :privacy, as: :boolean, label_html: { class: "toggle-label" }, input_html: { class: "toggle"}, label: 'Private' %>
         <%= f.submit class: 'btn-submit' %>
       <% end %>

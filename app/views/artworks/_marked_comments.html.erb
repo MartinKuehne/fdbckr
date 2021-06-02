@@ -1,8 +1,6 @@
-  <% @artwork.comments.each do |comment| %> 
-    <% if comment.x_offset != nil && comment.y_offset != nil %>
+  <% @marked_comments.each do |comment| %> 
       <div class="d-flex mt-3">
-        <%= image_tag("https://source.unsplash.com/0fN7Fxv1eWA/300x300", class: 'mr-5', :alt => "profile picture", style: 'object-fit: cover; width: 75px; height: 75px') %>
-        <p><%= comment.content %></p>
+        <img class="profile mr-3" src=<%= comment.user.avatar%> alt="profile picture">
+        <p class="comment ml-3"><%= comment.content %></p>
       </div>
-    <% end %>
   <% end %>
