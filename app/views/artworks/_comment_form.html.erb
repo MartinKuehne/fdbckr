@@ -1,4 +1,3 @@
-
 <%= simple_form_for [@artwork, @comment], html: { class: 'd-flex flex-column flex-grow-1' } do |f| %>
   <%= f.input :content, input_html: { class: 'flex-grow-1' }, placeholder: 'What would you like to say about this piece?', label: false %>
   <%= f.button :submit, input_html: { class: 'justify-content-center, mb-3' } %>

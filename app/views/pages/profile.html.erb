@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <!-- Content here -->
+  <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+    <div class="d-flex">
+      <% if current_user.photo.attached? %>
+        <% cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <img src="https://source.unsplash.com/X6Uj51n5CE8/150x150" class="img-thumbnail" alt="Profile Picture">
+      <% end %>
+      <!-- <img src="https://source.unsplash.com/X6Uj51n5CE8/150x150" class="img-thumbnail" alt="Profile Picture"> -->
+    </div>
+    <div class="d-flex flex-column bd-highlight flex-grow-1 ml-2">
+      <div><h1><i>@<%= current_user.username %></i></h1></div>
+      <div>👾 <%= current_user.first_name %> <%= current_user.last_name %></div>
+      <div>📍 <%= current_user.location %></div>
+    </div>
+
+    <div>
+      <a href="#" class="button-primary">Follow</a>
+    </div>
+  </div>
+
+ <div class="d-flex justify-content-center">
+    <p class="centered-content"><%= current_user.bio %></p>
+  </div>
+
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <img src="https://source.unsplash.com/xb0wLfZH9Zo/900x600" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.1s">
+        <img src="https://source.unsplash.com/tKgcMR8saYA/600x900" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.4s">
+      </div>
+      <!--Grid column-->
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <img src="https://source.unsplash.com/wN9DU73b8_s/600x900" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.2s">
+        <img src="https://source.unsplash.com/ineC_oi7NHs/900x600" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.5s">
+      </div>
+      <!--Grid column-->
+        <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <img src="https://source.unsplash.com/woMD-vhzOHI/900x600" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.1s">
+        <img src="https://source.unsplash.com/1rBg5YSi00c/600x900" class="img-fluid mb-4" alt=""
+          data-wow-delay="0.4s">
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+
+</div>
