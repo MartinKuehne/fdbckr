@@ -1,10 +1,3 @@
-# 1. if CURRENT USER has been given permission to view an ARTWORK, run iteration:
-#     show all artworks WHERE current user exists ORDER BY upload_time DESC
-# 2. Run iteration:
-#     show all artworks WHERE privacy = false ORDER BY upload_time DESC
-
-
-
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
   # skip_before_action :authenticate_user!, only: [ :index ]

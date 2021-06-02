@@ -1,21 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-sm-9 m-3">
-      <img class="" style="object-fit:cover; width: 100%" src="https://picsum.photos/seed/picsum/536/354" alt="">
+    <div class="col-sm-9 mt-4">
+      <a href="<%= artwork_path(artwork) %>">
+        <img class="" style="object-fit:cover; width: 100%" src="https://picsum.photos/seed/picsum/536/354" alt="artwork">
+      </a>
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-sm-9 w-100 d-flex">
-      <img class="avatar" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1617607697/ec6l9vxrkw1qfex9wznv.jpg">
-        <%= simple_form_for [artwork, comment] do |f| %>
-        <%= f.input :content, label: false %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-sm-9 w-100  d-flex">
-      <%= artwork.description %>
+    <div class="col-sm-9 my-2">
+      <div class="container d-flex">
+        <img class="profile mr-3" src="<%= current_user.avatar%>" alt="profile picture">
+        <%= simple_form_for [artwork, @comment], url: create_comments_index_path(artwork), method: :post, html: { class: 'd-flex flex-column flex-grow-1' } do |f| %>
+          <%= f.input :content, input_html: { class: 'flex-grow-1' }, placeholder: 'What would you like to say about this piece?', label: false %>
+          <%= f.button :submit, input_html: { class: 'justify-content-center, mb-3' } %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
