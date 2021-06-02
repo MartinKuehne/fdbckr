@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.delete_all
+
+u1 = User.create!(email: "marnie@marnie.com", password: 'password', password_confirmation: 'password', created_at: "2011-05-25 12:25:45", updated_at: "2021-05-25 12:28:10", first_name: 'Marnie', last_name: 'The First', username: 'its_lavender_marnie', bio: 'Im an awsome artist', avatar: 'https://source.unsplash.com/X6Uj51n5CE8/300x300', location: 'Berlin')
+u2 = User.create!(email: "yuno@yuno.com", password: 'password', password_confirmation: 'password', created_at: "2011-05-25 12:25:45", updated_at: "2021-05-25 12:28:10", first_name: 'Yuno', last_name: 'The Second', username: 'its_yunoTheSecond', bio: 'Im an awsome artist', avatar: 'https://source.unsplash.com/X6Uj51n5CE8/300x300', location: 'Berlin')
+u3 = User.create!(email: "laura@laura.com", password: 'password', password_confirmation: 'password', created_at: "2011-05-25 12:25:45", updated_at: "2021-05-25 12:28:10", first_name: 'Laura', last_name: 'The Third', username: 'its_lauraTheThrid', bio: 'I am an artist based in Hamburg and Berlin. I work primarily with lavender and I only collaborate with those that know how to appreciate it. All feedback welcome!', avatar: 'https://source.unsplash.com/X6Uj51n5CE8/300x300', location: 'Berlin')
+u4 = User.create!(email: "martin@martin.com", password: 'password', password_confirmation: 'password', created_at: "2011-05-25 12:25:45", updated_at: "2021-05-25 12:28:10", first_name: 'Martin', last_name: 'The Forth', username: 'its_martinTheFourth', bio: 'Im an awsome artist', avatar: 'https://source.unsplash.com/X6Uj51n5CE8/300x300', location: 'Berlin')
