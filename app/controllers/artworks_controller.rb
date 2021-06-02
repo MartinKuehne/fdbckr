@@ -2,7 +2,7 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
 
   def index
-    @artworks = Artworks.all
+    @artworks = Artwork.all
   end
 
   def show
@@ -18,7 +18,7 @@ class ArtworksController < ApplicationController
     @artwork.user = current_user
 
     if @artwork.save
-      render :show
+      redirect_to artwork_path(@artwork)
     else
       render :new
     end

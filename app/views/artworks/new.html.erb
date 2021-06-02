@@ -1,14 +1,21 @@
 <section>
   <div>
-    <%= simple_form_for @artwork do |f| %>
-      <%= f.input :title, label: 'Title', placeholder: "Title" %>
-      <%= f.input :description, label: 'Description', placeholder: "What is your work about?" %>
-      <%= f.input :request, placeholder: "Is there any specific feedback you are looking for?" %>
-      <%= f.input :photo, as: :file, input_html: { multiple: true } %>
-    <%# privacy, insert button to toggle public/private, default display true %>
-      <%= f.submit class: 'btn-submit' %>
-    <% end %>
+    <div id="artwork-images">
+    </div>
+    <div>
+      <%= simple_form_for @artwork do |f| %>
+        <%= f.input :title, label: 'Title', placeholder: "Title" %>
+        <%= f.input :description, label: 'Description', placeholder: "What is your work about?" %>
+        <%= f.input :request, placeholder: "Is there any specific feedback you are looking for?" %>
+        <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+      <%# privacy, insert button to toggle public/private, default display true %>
+        <%= f.submit class: 'btn-submit' %>
+      <% end %>
+    </div>
   </div>
 </section>
 
 <%# in the show view insert following line to display image: cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+
+<%# (1) build it myself, event change, img element, 
+    (2) file uploader plugins  %>
