@@ -17,6 +17,15 @@ class ArtworksController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+
+    @general_comments = @artwork.comments.map do |comment|
+      comment if comment.x_offset.nil? && comment.y_offset.nil?
+    end
+
+    @marked_comments = @artwork.comments.map do |comment|
+      comment unless comment.x_offset.nil? || comment.y_offset.nil?
+    end
   end
 
   def new
@@ -28,7 +37,7 @@ class ArtworksController < ApplicationController
     @artwork.user = current_user
 
     if @artwork.save
-      render :show
+      redirect_to artwork_path(@artwork)
     else
       render :new
     end
@@ -46,6 +55,6 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:restaurant).permit(:title, :description, :version, :privacy, :request)
+    params.require(:artwork).permit(:title, :description, :version, :privacy, :request, photos: [])
   end
 end

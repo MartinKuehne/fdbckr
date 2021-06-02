@@ -1,0 +1,6 @@
+  <% @marked_comments.each do |comment| %> 
+      <div class="d-flex mt-3">
+        <img class="profile mr-3" src=<%= comment.user.avatar%> alt="profile picture">
+        <p class="comment ml-3"><%= comment.content %></p>
+      </div>
+  <% end %>
