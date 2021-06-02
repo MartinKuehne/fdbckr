@@ -16,7 +16,7 @@ p.logo {
 
 a.button-primary {
   display: inline-block;
-  box-shadow: -3px 4px 0px 0px #000000;
+  /* box-shadow: -3px 4px 0px 0px #000000; */
   padding: 0.5em 3em;
   border: 0.12em solid #000000;
   margin: 0 0.3em 0.3em 0;
@@ -31,13 +31,39 @@ a.button-primary {
   border-radius: 8px;
   background-color: #D7ECFF;
   cursor: pointer;
+  z-index: 2;
+}
+
+/* Button Primary with Shadow*/
+
+.button-wrapper {
+  position: relative;
+}
+
+a.button-shadow {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  z-index: -1;
+  position: absolute;
+  top: 5px;
+  left: -5px;
 }
 
 /* Button Secondary */
 
 a.button-secondary {
   display: inline-block;
-  box-shadow: -3px 4px 0px 0px #000000;
   padding: 0.5em 3em;
   border: 0.12em solid #000000;
   margin: 0 0.3em 0.3em 0;
@@ -125,6 +151,27 @@ p.centered-content {
   width: 600px;
 }
 
+/* Top Description Section */
+.top-description {
+  h1 {
+    font-size: 2.3rem !important;
+    font-weight: 700 !important;
+    font-family: 'Roboto',sans-serif !important;
+    margin-bottom: 0px !important;
+  }
+  a {
+    font-size: 1.2rem !important;
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 700 !important;
+    color: black !important;
+  }
+  p {
+    font-size: 1.2rem !important;
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 700 !important;
+  }
+}
+
 /* Navbar */
 
 .navbar {
@@ -147,4 +194,16 @@ p.centered-content {
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-link {
+  margin-left: 50px !important;
+}
+
+.left-border {
+  border-left-style: solid;
+}
+
+a.nav-link {
+  font-size: 1.15rem;
 }
