@@ -23,12 +23,16 @@
 
   <h2 class="mt-3">Avatar</h2>
   <img class="profile" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+  <!-- ALTERNATIVE -->
+  <!--  <%= image_tag(@artwork.user.avatar, class: 'profile') %> -->
 
   <h2 class="mt-3">Avatar with Notification</h2>
   <div class="profile-image">
   	<a href="#">
 		<span class="notify-badge">1</span>
       <img class="profile" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+        <!-- ALTERNATIVE -->
+        <!--  <%= image_tag(@artwork.user.avatar, class: 'profile') %> -->
 	  </a>
 	</div>
 
@@ -44,6 +48,8 @@
   <h2 class="mt-3">Comment</h2>
   <div class="d-flex mt-3">
     <img class="profile mr-3" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+      <!-- ALTERNATIVE -->
+      <!--  <%= image_tag(@artwork.user.avatar, class: 'profile mr-3') %> -->
     <p class="comment ml-3">For a first digital piece this looks pretty solid. Like a couple of the other comments said, there is definitely way too much use of the texture brushes. The colors are also very vibrant, you could try and experiment with different tints and shades and different colors for shadow. The tree shape also feels a bit artificial, I would recommend using some references to get a more natural look if that makes any sense. overall, very nice for a first digital painting.</p>
   </div>
 
@@ -55,6 +61,8 @@
   <h2 class="mt-3">Top Description Section</hh2>
   <div class="d-flex mt-5">
     <img class="profile" src="https://source.unsplash.com/0fN7Fxv1eWA/100x100" alt="profile picture">
+      <!-- ALTERNATIVE -->
+      <!--  <%= image_tag(@artwork.user.avatar, class: 'profile') %> -->
     <div class="container ml-3 top-description">
       <h1>My greatest artwork title</h1>
       <p>@<%= link_to 'martin', "#" %></p>
