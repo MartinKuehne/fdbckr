@@ -1,8 +1,12 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
+  # skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @artworks = Artwork.all
+    @comment = Comment.new
+    all_artworks = Artwork.where(privacy: false).order(created_at: :desc)
+    @requested_feedback_artworks = Artwork.joins(:feedback_requests).where(feedback_requests: { user: current_user }).order(created_at: :desc)
+    @public_artworks = all_artworks - @requested_feedback_artworks
   end
 
   def show

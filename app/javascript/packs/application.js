@@ -29,10 +29,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initArtworkPhoto } from './artwork_photo';
 import { initPlaceMarker } from './place_marker';
+import { initPrivacy } from './privacy_toggle'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initArtworkPhoto();
   initPlaceMarker();
+  initPrivacy();
 });
