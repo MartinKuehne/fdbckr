@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Artwork.delete_all
-User.delete_all
-
 u1 = User.create!(
   first_name: "Artist",
   last_name: "1",
@@ -29,6 +26,7 @@ u2 = User.create!(
   email: "yuno@yuno.com",
   password: 'password',
   password_confirmation: 'password'
+
 )
 
 u3 = User.create!(
@@ -55,28 +53,38 @@ u4 = User.create!(
 
 a1 = Artwork.create!(
   title: "Artwork 1",
-  description: "This is a description for Artwork 1",
-  privacy: false,
+  description: "This is Artwork 1 and it is PRIVATE. Only Yuno should be seeing this.",
+  privacy: true,
   user: u1
 )
 
 a2 = Artwork.create!(
   title: "Artwork 2",
-  description: "This is a description for Artwork 2",
+  description: "This is Artwork 2 and it is PUBLIC. Yuno has been invited to see this.",
   privacy: false,
   user: u2
 )
 
 a3 = Artwork.create!(
   title: "Artwork 3",
-  description: "This is a description for Artwork 3",
+  description: "This is Artwork 3 and it is PUBLIC.",
   privacy: false,
   user: u3
 )
 
 a4 = Artwork.create!(
   title: "Artwork 4",
-  description: "This is a description for Artwork 4",
-  privacy: false,
+  description: "This is Artwork 4 and it is PUBLIC. Yuno should not be seeing this.",
+  privacy: true,
   user: u4
 )
+
+feedback = FeedbackRequest.new
+feedback.user = u2
+feedback.artwork = a1
+feedback.save!
+
+feedback = FeedbackRequest.new
+feedback.user = u2
+feedback.artwork = a2
+feedback.save!

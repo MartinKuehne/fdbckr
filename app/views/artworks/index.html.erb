@@ -1,23 +1,7 @@
-<% @artworks.each do |artwork| %>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-9 m-3">
-        <img class="" style="object-fit:cover; width: 100%" src="https://picsum.photos/seed/picsum/536/354" alt="">
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-sm-9 w-100 d-flex">
-        <img class="avatar" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1617607697/ec6l9vxrkw1qfex9wznv.jpg">
-          <%= simple_form_for [artwork, @comment] do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.submit class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-          <%= artwork.user.first_name %>
-          <%= artwork.user.last_name %>
+<% @requested_feedback_artworks.each do |artwork| %>
+  <%= render "artworks_card", artwork: artwork, comment: @comment %>
 <% end %>
 
-
-
+<% @public_artworks.each do |artwork| %>
+  <%= render "artworks_card", artwork: artwork, comment: @comment %>
+<% end %>
