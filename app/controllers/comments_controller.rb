@@ -9,7 +9,16 @@ class CommentsController < ApplicationController
     @comment.artwork = @artwork
     @comment.user = current_user
     @comment.save
-    redirect_to artwork_path(@artwork)
+    redirect_to artwork_path
+  end
+
+  def create_index
+    @comment = Comment.new(comment_params)
+    @artwork = Artwork.find(params[:artwork_id])
+    @comment.artwork = @artwork
+    @comment.user = current_user
+    @comment.save
+    redirect_to root_path(@artwork, new_comment_id: @comment.id, anchor: "artwork-image-#{@artwork.id}")
   end
 
   private

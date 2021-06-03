@@ -1,21 +1,22 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
   before_action :set_user_ids, only: [:create]
+  # skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @artworks = Artwork.all
+    @comment = Comment.new
+    all_artworks = Artwork.where(privacy: false).order(created_at: :desc)
+    @requested_feedback_artworks = Artwork.joins(:feedback_requests).where(feedback_requests: { user: current_user }).order(created_at: :desc)
+    @public_artworks = all_artworks - @requested_feedback_artworks
+    @created_comment = nil
+    if params[:new_comment_id]
+      @created_comment = Comment.find(params[:new_comment_id])
+    end
   end
 
   def show
     @comment = Comment.new
-
-    @general_comments = @artwork.comments.map do |comment|
-      comment if comment.x_offset.nil? && comment.y_offset.nil?
-    end
-
-    @marked_comments = @artwork.comments.map do |comment|
-      comment unless comment.x_offset.nil? || comment.y_offset.nil?
-    end
+    @general_comments, @marked_comments = @artwork.comments.partition { |comment| comment.x_offset.nil? || comment.y_offset.nil? }
   end
 
   def new

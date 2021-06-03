@@ -95,6 +95,12 @@ img.profile {
   width: 75px;
 }
 
+img.profile-home {
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+}
+
 /* Avatar with notification */
 .profile-image {
   position: relative;
@@ -116,7 +122,7 @@ img.profile {
 /* Form -> How to select button?!*/
 
 .simple-form.btn {
-  display: inline-block !important;  
+  display: inline-block !important;
   padding: 0.5em 3em !important;
   border: 0.1em solid #000000 !important;
   margin: 0 0.3em 0.3em 0 !important;
@@ -189,6 +195,7 @@ p.centered-content {
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  margin-right: 6px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -205,4 +212,29 @@ p.centered-content {
 
 a.nav-link {
   font-size: 1.15rem;
+}
+
+a.button-navbar {
+  display: inline-block;
+  /* box-shadow: -3px 4px 0px 0px #000000; */
+  padding: 0.3em 1.5em;
+  border: 0.12em solid #000000;
+  margin: 4px 2.3em 0.3em 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  border-radius: 8px;
+  background-color: #E8D7FF;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.full-height {
+  padding: 7px 0 7px 17px;
+  border-left-style: solid;
 }

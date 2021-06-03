@@ -11,4 +11,8 @@ class PagesController < ApplicationController
     @comment = Comment.new
     @artwork = Artwork.find(1)
   end
+
+  def landing
+    @user = User.new
+  end
 end
