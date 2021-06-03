@@ -95,6 +95,12 @@ img.profile {
   width: 75px;
 }
 
+img.profile-home {
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+}
+
 /* Avatar with notification */
 .profile-image {
   position: relative;
@@ -116,7 +122,7 @@ img.profile {
 /* Form -> How to select button?!*/
 
 .simple-form.btn {
-  display: inline-block !important;  
+  display: inline-block !important;
   padding: 0.5em 3em !important;
   border: 0.1em solid #000000 !important;
   margin: 0 0.3em 0.3em 0 !important;

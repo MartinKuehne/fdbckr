@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/brandguidelines', to: 'pages#brandguidelines'
   get '/landing', to: 'pages#landing'
   post '/artworks/:artwork_id/comments', to: 'comments#create_index', as: 'create_comments_index'
+  resources :users, only: :show
   resources :artworks, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create]
   end
