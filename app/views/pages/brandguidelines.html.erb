@@ -74,9 +74,10 @@
   </div>
 
   <h2 class="mt-3">Navbar</h2>
+  
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <p class="logo mt-3 ml-5 mr-5">fdbckr.</p>
+    <p class="logo mt-1 mb-1 ml-5 mr-5">fdbckr.</p>
   <% end %>
 
   <ul class="navbar-nav mr-auto">
@@ -94,22 +95,30 @@
     </li>
   </ul>
 
+  <div>
+    <a href="/artworks/new" class="button-navbar">Upload your art</a>
+  </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
+  <% if current_user.username =! nil %>
+    <div class="full-height">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <%= image_tag (current_user.avatar.nil? ? "https://source.unsplash.com/jZaQOzrC3XU/100x100" : current_user.avatar), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% end %>
   </div>
-</div>
+
 
   <h2 class="mt-3">Grid</h2>
     <!--Grid row-->
