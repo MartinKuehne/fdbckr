@@ -7,6 +7,10 @@ class ArtworksController < ApplicationController
     all_artworks = Artwork.where(privacy: false).order(created_at: :desc)
     @requested_feedback_artworks = Artwork.joins(:feedback_requests).where(feedback_requests: { user: current_user }).order(created_at: :desc)
     @public_artworks = all_artworks - @requested_feedback_artworks
+    @created_comment = nil
+    if params[:new_comment_id]
+      @created_comment = Comment.find(params[:new_comment_id])
+    end
   end
 
   def show

@@ -29,7 +29,8 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initArtworkPhoto } from './artwork_photo';
 import { initPlaceMarker } from './place_marker';
-import { initPrivacy } from './privacy_toggle'
+import { initPrivacy } from './privacy_toggle';
+import { initSendFeedback} from './send_feedback';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
