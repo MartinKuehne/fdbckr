@@ -1,18 +1,27 @@
 <section>
-  <div>
-    <div id="artwork-images">
+  <%= simple_form_for @artwork, html: { class: " upload d-flex w-100 justify-content-evenly"} do |f| %>
+    <div class="col mt-3 ml-3">
+      <div class="mb-3" id="artwork-images"></div>
+      <%= f.input :photo, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Select artwork' %>
     </div>
-    <div class="artwork-form">
-      <%= simple_form_for @artwork do |f| %>
+    <div class="col">
+      <div class="form-input">
         <%= f.input :title, label: 'Title', placeholder: "Title" %>
         <%= f.input :description, label: 'Description', placeholder: "What is your work about?" %>
         <%= f.input :request, placeholder: "Is there any specific feedback you are looking for?" %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      </div>
+      <div class="row">
+        <label for="feedbacker" class="form-label">Feedbacker</label>
+        <input type="text" class="form-control" id="feedbacker" >
+        <div id="feedbackerHelp" class="form-text">Please select your feedbackers</div>
+        <button>Add</button>
+      </div>
+      <div class="row">
         <%= f.input :privacy, as: :boolean, label_html: { class: "toggle-label" }, input_html: { class: "toggle"}, label: 'Private' %>
         <%= f.submit class: 'btn-submit' %>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </section>
 
 <%# in the show view insert following line to display image: cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
