@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-sm-9 mt-5">
       <a href="<%= artwork_path(artwork) %>">
-        <img id="artwork-image-<%= artwork.id %>" class="center-img" style="object-fit:cover; width: 100%" src="https://picsum.photos/seed/picsum/536/354" alt="artwork">
+        <%= cl_image_tag artwork.photos.first.key, class: 'center-img', :alt => "artwork" %>
       </a>
     </div>
   </div>
