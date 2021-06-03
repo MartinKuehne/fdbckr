@@ -36,3 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   initArtworkPhoto();
   initPrivacy();
 });
+
+import "controllers"

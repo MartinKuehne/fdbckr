@@ -1,5 +1,6 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
+  before_action :set_user_ids, only: [:create]
 
   def index
     @artworks = Artwork.all
@@ -24,8 +25,12 @@ class ArtworksController < ApplicationController
   def create
     @artwork = Artwork.new(artwork_params)
     @artwork.user = current_user
-
+    # setting the version to 1; how can we change the code if we want to implement later versions?
+    @artwork.version = 1
     if @artwork.save
+      @user_ids.each do |id| 
+        FeedbackRequest.create(user_id: id, artwork: @artwork)
+      end
       redirect_to artwork_path(@artwork)
     else
       render :new
@@ -38,6 +43,10 @@ class ArtworksController < ApplicationController
   end
 
   private
+
+  def set_user_ids
+    @user_ids = params[:artwork][:user_id]
+  end
 
   def set_artwork
     @artwork = Artwork.find(params[:id])

@@ -1,21 +1,50 @@
 <section>
-  <%= simple_form_for @artwork, html: { class: " upload d-flex w-100 justify-content-evenly"} do |f| %>
-    <div class="col mt-3 ml-3">
-      <div class="mb-3" id="artwork-images"></div>
+  <%= simple_form_for @artwork, html: { class: " upload d-flex justify-content-evenly"} do |f| %>
+    <div class="col-4 p-5">
+      <div class="mb-4" id="artwork-images">
+        <i class="fas fa-plus fa-4x"></i>
+      </div>
       <%= f.input :photo, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Select artwork' %>
     </div>
-    <div class="col">
+    <div class="col-8 p-5">
       <div class="form-input">
         <%= f.input :title, label: 'Title', placeholder: "Title" %>
         <%= f.input :description, label: 'Description', placeholder: "What is your work about?" %>
         <%= f.input :request, placeholder: "Is there any specific feedback you are looking for?" %>
       </div>
-      <div class="row">
+      <%# 1. Friendships in the seeds
+          2. delete avatar from user + add photo to model
+          2.5 change User.all to friendships
+          3. load friendships in form input field (suggestions --> value: input)
+            (if artwork.new_record? then load suggestions else load users that we have already requested)
+          4. insert avatar %>
+      <div class="row feedbacker-input">
         <label for="feedbacker" class="form-label">Feedbacker</label>
-        <input type="text" class="form-control" id="feedbacker" >
-        <div id="feedbackerHelp" class="form-text">Please select your feedbackers</div>
-        <button>Add</button>
+        <%# replace User.all with friendship connections %>
+        <%= simple_fields_for :feedback_requests do |fr|%>
+        <%= f.input :user_id,
+          #add avatar pictures later
+          collection: User.all.map { |user| [ "#{user.first_name} #{user.last_name}", user.id] },
+          value: @artwork.feedback_requests.map { |fr| fr.user.id },
+          include_hidden: false,
+          label: "Select feedbackers",
+          # also minimum height to the box
+          wrapper_html: { class: 'w-100' },
+          input_html: {
+          class: 'w-100',
+          data: {
+            controller: "searchable-select",
+            searchable_select_target: 'input'
+          },
+          multiple: true
+          } 
+          %>
+        <% end %>
       </div>
+        <%# add external via email through an popup with button below (Add external) %>
+      <div id="feedbacker-selection"></div>
+<%#         <input type="text" class="form-control" id="feedbacker" > %>
+<%#         <div id="feedbackerHelp" class="form-text">Please select your feedbackers</div> %>
       <div class="row">
         <%= f.input :privacy, as: :boolean, label_html: { class: "toggle-label" }, input_html: { class: "toggle"}, label: 'Private' %>
         <%= f.submit class: 'btn-submit' %>
