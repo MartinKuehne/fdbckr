@@ -103,4 +103,3 @@ feedback = FeedbackRequest.new
 feedback.user = u2
 feedback.artwork = a2
 feedback.save!
-
