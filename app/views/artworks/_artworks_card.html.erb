@@ -6,7 +6,7 @@
         <%= cl_image_tag artwork.photos.first.key, class: 'center-img', :alt => "artwork" %>
       <% end %>
         <div class="overlay">
-          <%= artwork.user.username %><br>
+          @<%= artwork.user.username %><br>
           <%= artwork.title %>
         </div>
       </a>
