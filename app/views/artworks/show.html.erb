@@ -1,6 +1,8 @@
 <div class="container">
    <div class="d-flex mt-5">
-    <%= image_tag(@artwork.user.avatar, class: 'profile') %>
+    <% if @artwork.user.avatar %>
+      <%= image_tag(@artwork.user.avatar, class: 'profile') %>
+    <% end %>
     <div class="container ml-3 top-description">
       <h1>My greatest artwork title</h1>
       <p>@<%= link_to @artwork.user.username, profile_path(@artwork.user) %></p>
