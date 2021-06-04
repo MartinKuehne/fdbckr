@@ -4,11 +4,11 @@
   width: 100vw;
 }
 
-a.button-tertiary {
+a.button-tertiary-shadow {
   display: inline-block;
   /* box-shadow: -3px 4px 0px 0px #000000; */
   padding: 0.5em 3em;
-  border: 0.12em solid #000000;
+  border: 0.1em solid #000000;
   margin: 0 0.3em 0.3em 0;
   box-sizing: border-box;
   text-decoration: none;
@@ -22,7 +22,13 @@ a.button-tertiary {
   background-color: #FFFAF0;
   cursor: pointer;
   z-index: 2;
+  position: absolute;
 }
+
+a.button-tertiary-shadow:hover {
+  top: 5px;
+  left: -5px;
+} 
 
 /* Button Primary with Shadow*/
 
