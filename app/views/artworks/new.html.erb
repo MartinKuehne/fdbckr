@@ -2,9 +2,9 @@
   <%= simple_form_for @artwork, html: { class: " upload d-flex justify-content-evenly"} do |f| %>
     <div class="col-4 p-5">
       <div class="mb-4" id="artwork-images">
-        <i class="fas fa-plus fa-4x"></i>
+        <i class="fas fa-plus fa-4x" id="cross"></i>
       </div>
-      <%= f.input :photo, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Select artwork' %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Select artwork' %>
     </div>
     <div class="col-8 p-5">
       <div class="form-input">
@@ -19,7 +19,6 @@
             (if artwork.new_record? then load suggestions else load users that we have already requested)
           4. insert avatar %>
       <div class="row feedbacker-input">
-        <label for="feedbacker" class="form-label">Feedbacker</label>
         <%# replace User.all with friendship connections %>
         <%= simple_fields_for :feedback_requests do |fr|%>
         <%= f.input :user_id,
@@ -31,7 +30,6 @@
           # also minimum height to the box
           wrapper_html: { class: 'w-100' },
           input_html: {
-          class: 'w-100',
           data: {
             controller: "searchable-select",
             searchable_select_target: 'input'
@@ -41,13 +39,12 @@
           %>
         <% end %>
       </div>
-        <%# add external via email through an popup with button below (Add external) %>
-      <div id="feedbacker-selection"></div>
-<%#         <input type="text" class="form-control" id="feedbacker" > %>
-<%#         <div id="feedbackerHelp" class="form-text">Please select your feedbackers</div> %>
-      <div class="row">
-        <%= f.input :privacy, as: :boolean, label_html: { class: "toggle-label" }, input_html: { class: "toggle"}, label: 'Private' %>
-        <%= f.submit class: 'btn-submit' %>
+      <%# add external via email through an popup with button below (Add external) %>
+      <%# <div id="feedbacker-selection"></div> %>
+      <div class="d-flex flex-row-reverse submit-input mt-4 mr-5 align-items-center">
+      <%# change the button to button primary with hover effect %>
+        <%= f.submit class: 'btn-submit ml-5' %>
+        <%= f.input :privacy, as: :boolean, label_html: { class: "toggle-label mt-3" }, input_html: { class: "toggle"}, label: 'Private' %>
       </div>
     </div>
   <% end %>
