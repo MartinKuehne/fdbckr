@@ -39,3 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   initPlaceMarker();
   initPrivacy();
 });
+
+import "controllers"
