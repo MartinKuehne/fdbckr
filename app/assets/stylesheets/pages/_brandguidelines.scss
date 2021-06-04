@@ -32,17 +32,11 @@ a.button-primary {
   background-color: #D7ECFF;
   cursor: pointer;
   z-index: 2;
-  position: absolute;
 }
 
-a.button-primary:hover {
-  top: 5px;
-  left: -5px;
-}
-
-a.button-primary:active {
-  background-color: darken(#D7ECFF, 10%);
-}
+// a.button-primary:active {
+//   background-color: darken(#D7ECFF, 10%);
+// }
 
 /* Button Primary with Shadow*/
 
@@ -67,15 +61,15 @@ a.button-primary-shadow {
   position: absolute;
 }
 
-a.button-primary-shadow {
+a.button-primary-shadow:hover {
   top: 5px; 
-  right: 5px;
+  left: -5px;
 }
 
 .button-wrapper {
   position: relative;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
 }
 
 a.button-shadow {
@@ -141,7 +135,7 @@ a.button-secondary-shadow {
 
 a.button-secondary-shadow:hover {
   top: 5px;
-  right: 5px;
+  left: -5px;
 }
 
 @media all and (max-width:30em) {
