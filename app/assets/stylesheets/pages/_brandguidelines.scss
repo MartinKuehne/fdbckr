@@ -238,3 +238,33 @@ a.button-navbar {
   padding: 7px 0 7px 17px;
   border-left-style: solid;
 }
+
+/* Footer */
+
+.footer {
+  border-top-style: solid;
+}
+
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 5px 5px;
+}
+.footer-links a:hover {
+  opacity: 0.5;
+}
+
+.footer-link {
+  color: black;
+  margin: 10px 10px 20px 10px;
+}
+
+.footer-link:hover {
+  color: black;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+
+
