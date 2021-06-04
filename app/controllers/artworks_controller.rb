@@ -27,10 +27,14 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.new(artwork_params)
     @artwork.user = current_user
     # setting the version to 1; how can we change the code if we want to implement later versions?
+    # check to be able to create artwork even if there is no person selected
+    # put the artwork on homepage (which should happen automatically)
     @artwork.version = 1
     if @artwork.save
-      @user_ids.each do |id| 
-        FeedbackRequest.create(user_id: id, artwork: @artwork)
+      if @user_ids
+        @user_ids.each do |id| 
+          FeedbackRequest.create(user_id: id, artwork: @artwork)
+        end
       end
       redirect_to artwork_path(@artwork)
     else

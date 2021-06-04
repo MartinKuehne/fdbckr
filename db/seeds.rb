@@ -1,4 +1,6 @@
 require 'open-uri'
+FeedbackRequest.delete_all
+Artwork.delete_all
 Friendship.delete_all
 User.delete_all
 
