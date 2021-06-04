@@ -1,6 +1,6 @@
 class Artwork < ApplicationRecord
   belongs_to :user
-  has_many :feedback_requests
+  has_many :feedback_requests, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many_attached :photos
 

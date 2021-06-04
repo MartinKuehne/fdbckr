@@ -1,6 +1,6 @@
   <% @general_comments.each do |comment| %> 
       <div class="d-flex mt-3">
-        <img class="profile mr-3" src=<%= comment.user.avatar%> alt="profile picture">
+        <%= cl_image_tag comment.user.photo.key, class: 'profile mr-3' %>
         <p class="comment ml-3"><%= comment.content %></p>
       </div>
   <% end %>

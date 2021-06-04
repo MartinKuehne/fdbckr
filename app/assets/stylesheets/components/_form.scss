@@ -8,8 +8,40 @@
   align-items: center;
 }
 
+.preview-img {
+  max-width: 100%
+}
+
+.choices__inner {
+  min-height: 111px;
+  background-color: white;
+  border: 0.12em solid #bdc7c9;
+}
+
+.choices__input.choices__input--cloned {
+  background-color: white;
+}
+
+.choices__button {
+  color: #000000 !important;
+  border-left: 1px solid #000000 !important;
+  background-image: url("/images/cross.svg") !important;
+  background-size: 11px !important;
+}
+
+.choices__item.choices__item--selectable {
+  background-color: #D7ECFF;
+  color: #000000;
+  border: none;
+  padding: 10px;
+}
+
 .fa-plus {
   color: #d5bff1;
+}
+
+.form-control.string.required, .form-control.text.required, .form-control.text.optional  {
+  border: 0.1em solid #bdc7c9; 
 }
 
 .feedbacker-input {
