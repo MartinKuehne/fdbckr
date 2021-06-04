@@ -7,4 +7,19 @@
   display: block;
   margin: auto;
   max-height: 60vh;
+  position: relative;
+}
+
+.center-img:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  bottom: 0;
+  transition: height 0.5s ease-out;
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+.center-img:hover:before {
+  height: 100%;
 }

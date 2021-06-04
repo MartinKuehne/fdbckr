@@ -32,12 +32,24 @@ a.button-primary {
   background-color: #D7ECFF;
   cursor: pointer;
   z-index: 2;
+  position: absolute;
+}
+
+a.button-primary:hover {
+  top: 5px;
+  left: -5px;
+}
+
+a.button-primary:active {
+  background-color: darken(#D7ECFF, 10%);
 }
 
 /* Button Primary with Shadow*/
 
 .button-wrapper {
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 a.button-shadow {
