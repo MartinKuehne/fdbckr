@@ -24,7 +24,7 @@
         <%= simple_fields_for :feedback_requests do |fr|%>
         <%= f.input :user_id,
           #add avatar pictures later
-          collection: User.all.map { |user| [ "#{user.first_name} #{user.last_name}", user.id] },
+          collection: current_user.friends.map { |user| [ "#{user.first_name} #{user.last_name}", user.id] },
           value: @artwork.feedback_requests.map { |fr| fr.user.id },
           include_hidden: false,
           label: "Select feedbackers",

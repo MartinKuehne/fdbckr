@@ -14,4 +14,10 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  def friends
+    users_as_asker = friendships_as_asker.map { |friend| friend.receiver }
+    users_as_receiver = friendships_as_receiver.map { |friend| friend.asker }
+    users_as_asker + users_as_receiver
+  end
 end
