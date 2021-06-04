@@ -1,7 +1,7 @@
 <div class="container">
    <div class="d-flex mt-5">
     <% if @artwork.user.photo.key %>
-      <%= image_tag(@artwork.user.photo.key, class: 'profile') %>
+      <%= cl_image_tag @artwork.user.photo.key, class: 'profile' %>
     <% end %>
     <div class="container ml-3 top-description">
       <h1><%= @artwork.title %> </h1>
@@ -25,7 +25,7 @@
   </div>
   
     <div class="container d-flex mt-3">
-      <img class="profile mr-3" src=<%= current_user.photo.key%> alt="profile picture">
+      <%= cl_image_tag current_user.photo.key, class: 'profile mr-3' %>
       <%= render  "comment_form" %>
     </div>
 
