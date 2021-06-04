@@ -2,17 +2,17 @@
   <!-- Content here -->
   <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
     <div class="d-flex">
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class:"profile-home", height: 300, width: 400, crop: :fill, gravity: "faces" %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
       <% else %>
-        <img src="https://source.unsplash.com/EdAVNRvUVH4/150x150" class="profile-home" alt="Profile Picture ">
+        <img src="https://source.unsplash.com/EdAVNRvUVH4/150x150" class="img-thumbnail" alt="Profile Picture ">
       <% end %>
       <!-- <img src="https://source.unsplash.com/X6Uj51n5CE8/150x150" class="img-thumbnail" alt="Profile Picture"> -->
     </div>
     <div class="d-flex flex-column bd-highlight flex-grow-1 ml-2">
-      <div><h1><i>@<%= current_user.username %></i></h1></div>
-      <div>👾 <%= current_user.first_name %> <%= current_user.last_name %></div>
-      <div>📍 <%= current_user.location %></div>
+      <div><h1><i>@<%= @user.username %></i></h1></div>
+      <div>👾 <%= @user.first_name %> <%= current_user.last_name %></div>
+      <div>📍 <%= @user.location %></div>
     </div>
 
     <div>
@@ -21,7 +21,7 @@
   </div>
 
  <div class="d-flex justify-content-center">
-    <p class="centered-content"><%= current_user.bio %></p>
+    <p class="centered-content"><%= @user.bio %></p>
   </div>
 
     <!--Grid row-->
