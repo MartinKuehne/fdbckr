@@ -32,12 +32,50 @@ a.button-primary {
   background-color: #D7ECFF;
   cursor: pointer;
   z-index: 2;
+  position: absolute;
+}
+
+a.button-primary:hover {
+  top: 5px;
+  left: -5px;
+}
+
+a.button-primary:active {
+  background-color: darken(#D7ECFF, 10%);
 }
 
 /* Button Primary with Shadow*/
 
+a.button-primary-shadow {
+  display: inline-block;
+  /* box-shadow: -3px 4px 0px 0px #000000; */
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  border-radius: 8px;
+  background-color: #D7ECFF;
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+}
+
+a.button-primary-shadow {
+  top: 5px; 
+  right: 5px;
+}
+
 .button-wrapper {
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 a.button-shadow {
@@ -78,6 +116,32 @@ a.button-secondary {
   border-radius: 8px;
   background-color: #E8D7FF;
   cursor: pointer;
+}
+
+/* Button Secondary */
+
+a.button-secondary-shadow {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  border-radius: 8px;
+  background-color: #E8D7FF;
+  cursor: pointer;
+  position: absolute;
+}
+
+a.button-secondary-shadow:hover {
+  top: 5px;
+  right: 5px;
 }
 
 @media all and (max-width:30em) {

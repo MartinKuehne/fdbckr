@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-9 mt-5">
-      <a href="<%= artwork_path(artwork) %>">
-        <% if artwork.photos.present? %>
-          <%= cl_image_tag artwork.photos.first.key, class: 'center-img', :alt => "artwork" %>
-        <% end %>
+      <a href="<%= artwork_path(artwork) %>" class="hover-img-container">
+      <% if artwork.photos.present? %>
+        <%= cl_image_tag artwork.photos.first.key, class: 'center-img', :alt => "artwork" %>
+      <% end %>
+        <div class="overlay">
+          <%= artwork.user.username %><br>
+          <%= artwork.title %>
+        </div>
       </a>
     </div>
   </div>
@@ -28,7 +32,10 @@
         <img class="profile-comment mr-2" src="<%= current_user.avatar%>" alt="profile picture">
         <%= simple_form_for [artwork, @comment], url: create_comments_index_path(artwork), method: :post, remote: true, data: { turbolinks: false }, html: { class: 'd-flex flex-column flex-grow-1', id: "new_comment_#{artwork.id}" } do |f| %>
           <%= f.input :content, input_html: { class: 'flex-grow-1, small-text', id: "comment_content_#{artwork.id}" }, placeholder: 'What would you like to say about this piece?', label: false %>
-          <%= f.submit value: "Send feedback", class: 'btn-send-feedback justify-content-center mb-3 send-feedback' %>
+          <div class="button-wrapper">
+            <%= f.submit value: "Send feedback", class: 'btn-send-feedback justify-content-center mb-3 send-feedback', 'data-disable-with' => "Send feedback" %>
+            <a href="#" class="btn-shadow">Send feedback</a>
+          </div>
         <% end %>
       </div>
     </div>
