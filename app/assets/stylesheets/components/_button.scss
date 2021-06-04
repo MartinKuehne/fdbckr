@@ -18,7 +18,7 @@
 
 .btn-send-feedback:hover {
   top: 5px;
-  left: -5px;
+  right: 5px;
 }
 
 .btn-send-feedback:active {
@@ -26,11 +26,15 @@
 }
 
 .button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
   position: relative;
 }
 
-a.btn-shadow {
-  display: inline-block;
+.btn-shadow {
+  display: block;
+  content: 'Send feedback';
   padding: 0.5em 3em;
   border: 0.12em solid #000000;
   box-sizing: border-box;
@@ -45,5 +49,5 @@ a.btn-shadow {
   z-index: -1;
   position: absolute;
   top: 5px;
-  left: -5px;
+  right: 5px;
 }
