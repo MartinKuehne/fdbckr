@@ -43,14 +43,14 @@
   background-color: darken(#D7ECFF, 10%);
 }
 
-.button-wrapper {
+.button-wrapper-feedback {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   position: relative;
 }
 
-.btn-shadow {
+.btn-shadow-feedback {
   display: block;
   content: 'Send feedback';
   padding: 0.5em 3em;
