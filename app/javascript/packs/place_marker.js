@@ -10,7 +10,7 @@ const form = document.querySelector('.simple_form')
     image.addEventListener("click", (event) => {
       console.log(event)
       const element = document.createElement('i');
-      element.className = 'fas fa-comment marker';
+      element.className = 'far fa-dot-circle marker';
       element.style.left = `${event.offsetX - 7}px`
       element.style.top = `${event.offsetY + 7}px`
       wrapper.appendChild(element)
