@@ -21,6 +21,10 @@ class ArtworksController < ApplicationController
     @marked_comments = @marked_comments_i.sort_by(&:created_at).reverse
   end
 
+  def discover
+    @public_artworks = Artwork.where(privacy: false).order(created_at: :desc)
+  end
+
   def new
     @artwork = Artwork.new
   end
@@ -32,7 +36,7 @@ class ArtworksController < ApplicationController
     @artwork.version = 1
     if @artwork.save
       if @user_ids
-        @user_ids.each do |id| 
+        @user_ids.each do |id|
           FeedbackRequest.create(user_id: id, artwork: @artwork)
         end
       end
