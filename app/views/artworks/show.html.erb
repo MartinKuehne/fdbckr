@@ -9,7 +9,7 @@
         <p>@<%= link_to @artwork.user.username, profile_path(@artwork.user) %></p>
       </div>
       <div class="button-wrapper-follow">
-        <a href="#" class="btn-send-follow">Follow</a>
+        <%= link_to 'Follow', user_friendships_path(@artwork.user), class: 'button-primary-shadow', method: :post %>
         <a href="#" class="btn-shadow-follow">Follow</a>
       </div>
     </div>
