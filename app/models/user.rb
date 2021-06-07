@@ -25,5 +25,9 @@ class User < ApplicationRecord
 
   def send_invitation(user)
     Friendship.create(asker: self, receiver_id: user.id, status: 'pendig')
-  end 
+  end
+
+  def public_artworks
+    artworks.where(privacy: false)
+  end
 end

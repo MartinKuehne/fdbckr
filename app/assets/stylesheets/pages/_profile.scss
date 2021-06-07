@@ -7,3 +7,9 @@ p.centered-content {
   text-align: center;
   width: 600px;
 }
+
+/* fluid 5 columns */
+.grid-item { width: 32%; margin-bottom: 10px }
+/* 2 columns */
+.grid-item--width2 { width: 40%; }
+.gutter-size { width: 2% }
