@@ -5,11 +5,13 @@ function initScrollBar() {
   const height = location.scrollHeight - location.clientHeight;
   const scrolled = (distanceFromPageTop / height) * 100;
   document.querySelector(".scroll-bar").style.width =  `${scrolled}%`;
-} 
+}
 
 const initScroll = () => {
   const scrollWindow = document.getElementById('artwork-images');
-  scrollWindow.addEventListener('scroll', () => initScrollBar())
+  if (scrollWindow){
+    scrollWindow.addEventListener('scroll', () => initScrollBar())
+  }
 }
 
 

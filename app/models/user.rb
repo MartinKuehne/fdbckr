@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def pending_invitations
     pending_friendships
   end
+
+  def public_artworks
+    artworks.where(privacy: false)
+  end
 end
