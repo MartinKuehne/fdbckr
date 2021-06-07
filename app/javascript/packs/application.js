@@ -32,6 +32,7 @@ import { initPlaceMarker } from './place_marker';
 import { initPrivacy } from './privacy_toggle';
 import { initSendFeedback} from './send_feedback';
 import { initScroll } from './scrollbar_img';
+import { initImageGrid } from './image_grid';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initPlaceMarker();
   initPrivacy();
   initScroll();
+  initImageGrid();
 });
 
 import "controllers"
