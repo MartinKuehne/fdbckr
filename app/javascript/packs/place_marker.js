@@ -21,7 +21,7 @@ const input = document.querySelector('.comment-field')
 
       console.log(event)
       const element = document.createElement('i');
-      element.className = 'far fa-dot-circle marker';
+      element.className = 'far fa-dot-circle marker route-pin';
       element.style.left = `${event.offsetX - 7}px`
       element.style.top = `${event.offsetY + 7}px`
       wrapper.appendChild(element)
@@ -32,7 +32,16 @@ const input = document.querySelector('.comment-field')
       hidden_x.value = event.offsetX
       hidden_y.value = event.offsetY
       console.log(input)
-      input.focus()
+      const targetScroll = input.scrollTop
+      window.scrollTo({
+        top: 400,
+        behavior: 'smooth',
+      })
+
+      setTimeout(() => {
+        input.focus()
+      }, 300)
+
       counter += 1
     })
   }
