@@ -6,13 +6,8 @@
     <div class="d-flex mt-3 flex-wrap">
       <% current_user.friends.each do |friend| %>
         <div class="d-flex align-items-center m-1">
-          <% if current_user.id == friend.asker_id %>
-            <%= cl_image_tag User.find(friend.receiver_id).photo.key, class: 'profile' %>
-            <%= link_to User.find(friend.receiver_id).username, user_path(friend.receiver_id), class: 'ml-3 link-dark'%>
-          <% else %>
-            <%= cl_image_tag User.find(friend.asker_id).photo.key, class: 'profile' %>
-            <%= link_to User.find(friend.asker_id).username, user_path(friend.asker_id), class: 'ml-3 link-dark'%>
-          <% end %>
+          <%= cl_image_tag friend.photo.key, class: 'profile' %>
+          <%= link_to friend.username, user_path(friend.id), class: 'ml-3 link-dark'%>
         </div>
       <% end %>
     </div>
