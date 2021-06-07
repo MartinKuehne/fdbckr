@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :friendships_as_asker, class_name: "Friendship", foreign_key: :asker_id
   has_many :friendships_as_receiver, class_name: "Friendship", foreign_key: :receiver_id
   has_one_attached :photo
-  has_many :pending_friendships, -> { where confirmed: 'pending' }, class_name: 'Friendship', foreign_key: :receiver_id
+  has_many :pending_friendships, -> { where status: 'pending' }, class_name: 'Friendship', foreign_key: :receiver_id
 
   validates :username, presence: true
   validates :username, uniqueness: true
@@ -18,12 +18,16 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   def friends
-    users_as_asker = friendships_as_asker.map { |friend| friend.receiver }
-    users_as_receiver = friendships_as_receiver.map { |friend| friend.asker }
+    users_as_asker = friendships_as_asker.map(&:receiver)
+    users_as_receiver = friendships_as_receiver.map(&:asker)
     users_as_asker + users_as_receiver
   end
 
-  def send_invitation(user)
-    Friendship.create(asker: self, receiver_id: user.id, status: 'pendig')
-  end 
+  def send_invitation(user_id)
+    Friendship.create!(asker: self, receiver_id: user_id, status: 'pending')
+  end
+
+  def pending_invitations
+    pending_friendships
+  end
 end
