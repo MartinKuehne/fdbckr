@@ -31,10 +31,8 @@ class ArtworksController < ApplicationController
     # setting the version to 1; how can we change the code if we want to implement later versions?
     @artwork.version = 1
     if @artwork.save
-      if @user_ids
-        @user_ids.each do |id| 
-          FeedbackRequest.create(user_id: id, artwork: @artwork)
-        end
+      @user_ids&.each do |id| 
+        FeedbackRequest.create(user_id: id, artwork: @artwork)
       end
       redirect_to share_path
       # artwork_path(@artwork)
