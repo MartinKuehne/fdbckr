@@ -18,9 +18,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   def friends
-    users_as_asker = friendships_as_asker.map(&:receiver)
-    users_as_receiver = friendships_as_receiver.map(&:asker)
-    users_as_asker + users_as_receiver
+    Friendship.where(asker: self, status: 'accepted') + Friendship.where(receiver: self, status: 'accepted')
   end
 
   def send_invitation(user_id)

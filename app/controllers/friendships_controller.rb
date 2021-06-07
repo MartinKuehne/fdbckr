@@ -8,10 +8,12 @@ class FriendshipsController < ApplicationController
 
   def accept
     @friendship.accept!
+    # redirect_to friends_path(params[:id])
   end
 
   def decline
     @friendship.decline!
+    # redirect_to friends_path(params[:id])
   end
 
   private

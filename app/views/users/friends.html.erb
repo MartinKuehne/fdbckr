@@ -1,18 +1,36 @@
 <div class="container">
-  <h1>Your Friends</h1>
-  <h3>Friend requests</h3>
-  <% current_user.pending_invitations.each do |request| %>
-    <%= User.find(request.receiver_id).username %>
-    <div class="d-flex">
-      <div class="button-wrapper">
-        <%= link_to 'Accept', accept_friendship_path(request), class: 'button-primary-shadow', method: :patch %>
-        <a href="#" class="button-shadow">Follow</a>
-      </div>
-      
-      <div class="button-wrapper">
-        <%= link_to 'Decline', decline_friendship_path(request), class: 'button-primary-shadow', method: :patch %>
-        <a href="#" class="button-shadow">Follow</a>
-      </div>
+  <h1 class="text-center mt-3">Your Friends</h1>
+  
+  <% if current_user.friends.any? %>
+    <h3>All of your friends</h3>
+    <div class="d-flex mt-3 flex-wrap">
+      <% current_user.friends.each do |friend| %>
+        <div class="d-flex align-items-center m-1">
+          <% if current_user.id == friend.asker_id %>
+            <%= cl_image_tag User.find(friend.receiver_id).photo.key, class: 'profile' %>
+            <%= link_to User.find(friend.receiver_id).username, user_path(friend.receiver_id), class: 'ml-3 link-dark'%>
+          <% else %>
+            <%= cl_image_tag User.find(friend.asker_id).photo.key, class: 'profile' %>
+            <%= link_to User.find(friend.asker_id).username, user_path(friend.asker_id), class: 'ml-3 link-dark'%>
+          <% end %>
+        </div>
+      <% end %>
     </div>
+  <% end %>
+
+  <% if current_user.pending_invitations.any? %>
+    <h3>Pending Friend Requests</h3>
+    <% current_user.pending_invitations.each do |request| %>
+      <div class="d-flex mt-3">
+        <%= cl_image_tag User.find(request.receiver_id).photo.key, class: 'profile' %>
+        <div class="container ml-3 top-description d-flex align-items-center">
+          @<%= link_to User.find(request.receiver_id).username, user_path(request.receiver_id) %> <br>
+        </div>
+        <div class="container ml-3 top-description d-flex align-items-center">
+          <%= link_to 'Accept', Waccept_friendship_path(request), class: 'button-primary', method: :patch %>
+          <%= link_to 'Decline', decline_friendship_path(request), class: 'button-secondary', method: :patch %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
