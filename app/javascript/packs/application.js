@@ -31,6 +31,7 @@ import { initArtworkPhoto } from './artwork_photo';
 import { initPlaceMarker } from './place_marker';
 import { initPrivacy } from './privacy_toggle';
 import { initSendFeedback} from './send_feedback';
+import { initScroll } from './scrollbar_img';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   initArtworkPhoto();
   initPlaceMarker();
   initPrivacy();
+  initScroll();
 });
 
 import "controllers"
