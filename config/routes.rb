@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/brandguidelines', to: 'pages#brandguidelines'
   get '/landing', to: 'pages#landing'
   get '/users/:id/friends', to: 'users#friends', as: 'friends'
+  get '/discover', to: 'artworks#discover'
   post '/artworks/:artwork_id/comments', to: 'comments#create_index', as: 'create_comments_index'
   patch 'friendships/:id/accept', to: 'friendships#accept', as: 'accept_friendship'
   patch 'friendships/:id/decline', to: 'friendships#decline', as: 'decline_friendship'
@@ -15,6 +16,5 @@ Rails.application.routes.draw do
   resources :artworks, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create]
   end
-  post '/artworks/:artwork_id/comments', to: 'comments#create_index', as: 'create_comments_index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

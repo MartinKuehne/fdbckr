@@ -19,6 +19,10 @@ class ArtworksController < ApplicationController
     @general_comments, @marked_comments = @artwork.comments.partition { |comment| comment.x_offset.nil? || comment.y_offset.nil? }
   end
 
+  def discover
+    @public_artworks = Artwork.where(privacy: false).order(created_at: :desc)
+  end
+
   def new
     @artwork = Artwork.new
   end
@@ -30,7 +34,7 @@ class ArtworksController < ApplicationController
     @artwork.version = 1
     if @artwork.save
       if @user_ids
-        @user_ids.each do |id| 
+        @user_ids.each do |id|
           FeedbackRequest.create(user_id: id, artwork: @artwork)
         end
       end

@@ -35,3 +35,14 @@
 .hover-img-container:hover .overlay {
   opacity: 1;
 }
+
+.hover-img-container-2 {
+  display: block;
+  max-height: 65vh;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.hover-img-container-2:hover .overlay {
+  opacity: 1;
+}
