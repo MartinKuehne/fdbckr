@@ -1,7 +1,9 @@
-<% @requested_feedback_artworks.each do |artwork| %>
-  <%= render "artworks_card", artwork: artwork, comment: @comment %>
-<% end %>
+<div class="mb-5">
+  <% @requested_feedback_artworks.each do |artwork| %>
+    <%= render "artworks_card", artwork: artwork, comment: @comment %>
+  <% end %>
 
-<% @public_artworks.each do |artwork| %>
-  <%= render "artworks_card", artwork: artwork, comment: @comment %>
-<% end %>
+  <% @public_artworks.each do |artwork| %>
+    <%= render "artworks_card", artwork: artwork, comment: @comment %>
+  <% end %>
+</div>
