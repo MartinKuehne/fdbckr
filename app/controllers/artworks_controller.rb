@@ -16,7 +16,9 @@ class ArtworksController < ApplicationController
 
   def show
     @comment = Comment.new
-    @general_comments, @marked_comments = @artwork.comments.partition { |comment| comment.x_offset.nil? || comment.y_offset.nil? }
+    @general_comments_i, @marked_comments_i = @artwork.comments.partition { |comment| comment.x_offset.nil? || comment.y_offset.nil? }
+    @general_comments = @general_comments_i.sort_by!(&:created_at).reverse
+    @marked_comments = @marked_comments_i.sort_by(&:created_at).reverse
   end
 
   def discover
