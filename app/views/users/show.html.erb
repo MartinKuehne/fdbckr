@@ -16,7 +16,7 @@
     </div>
 
     <div>
-      <a href="#" class="button-primary">Follow</a>
+      <%= link_to 'Follow', user_friendships_path(params[:id]), class: 'button-primary', method: :post %>
     </div>
   </div>
 
