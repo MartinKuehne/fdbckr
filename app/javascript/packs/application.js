@@ -41,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initPlaceMarker();
   initPrivacy();
   initScroll();
-  initImageGrid();
+  // initImageGrid();
 });
 
 import "controllers"
