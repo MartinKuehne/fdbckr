@@ -9,7 +9,11 @@ class CommentsController < ApplicationController
     @comment.artwork = @artwork
     @comment.user = current_user
     @comment.save
-    redirect_to artwork_path
+    if params[:coming_from] == "show"
+      redirect_to @artwork
+    else
+      redirect_to root_path(@artwork, new_comment_id: @comment.id, anchor: "artwork-image-#{@artwork.id}")
+    end
   end
 
   def create_index
