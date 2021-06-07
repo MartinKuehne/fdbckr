@@ -1,11 +1,9 @@
-const initEmails = () => {
-  input = document.querySelector('.emails-input');
-  location = document.getElementById('emails');
-  /* select the form and after submit we want the prevent default */
-  input.addEventListener('keyup', (e) => {
-    if (e.keyCode === '13') {
+import $ from 'jquery';
+import 'select2';
 
-    }
+const initEmails = () => {
+  $(".emails-input").select2({
+    tags: true
   });
 };
 

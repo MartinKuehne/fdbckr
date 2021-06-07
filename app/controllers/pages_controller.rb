@@ -17,5 +17,6 @@ class PagesController < ApplicationController
   end
 
   def share
+    @artwork = Artwork.find(params[:artwork_id])
   end
 end
