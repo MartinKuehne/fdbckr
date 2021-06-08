@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/brandguidelines', to: 'pages#brandguidelines'
   get '/landing', to: 'pages#landing'
   get '/users/:id/friends', to: 'users#friends', as: 'friends'
+  get '/discover', to: 'artworks#discover'
   post '/artworks/:artwork_id/comments', to: 'comments#create_index', as: 'create_comments_index'
   patch 'friendships/:id/accept', to: 'friendships#accept', as: 'accept_friendship'
   patch 'friendships/:id/decline', to: 'friendships#decline', as: 'decline_friendship'
