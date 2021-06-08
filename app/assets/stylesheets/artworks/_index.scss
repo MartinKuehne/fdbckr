@@ -57,3 +57,15 @@
   opacity: 1;
 }
 
+.hover-img-container-3 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hover-img-container-3:hover .overlay {
+  opacity: 1;
+}
+
