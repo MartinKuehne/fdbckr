@@ -1,14 +1,25 @@
 <div class="share-ctn">
   <div class="info-box">
-    <h2 style="margin-top: 120px">Share your artwork</h2>
-    <div class="row d-flex justify-content-center mt-5">
-      <p>To share your work, please enter the emails and send a custom message to your friends</p>
+    <h2 style="margin-top: 80px">Congrats, you successfully submitted your work!</h2>
+    <div class="justify-content-center mt-4 mb-4">
+        <div class="row justify-content-center mt-4">
+          <% @artwork.photos.each do |image| %>
+            <div class="row img-wrapper">
+              <%= cl_image_tag image.key, style: 'max-height: 300px; max-width: 300px; object-fit: cover; border-radius: 4px' %>     
+            </div>
+          <% end %>
+        </div>
+      <p class="mt-4">Invite externals to check out your artwork by entering their emails and sending a custom message</p>
     </div>
     <div class="row d-flex align-items-center justify-content-center mt-1">
-      <%= simple_form_for :mail_request, url: invite_externals_path(@artwork) do |f| %>
-        <select class="emails-input w-100" name="emails[]" multiple="true"></select>
-        <%= f.input :message %>
-        <%= f.submit class: 'button-submit' %>
+      <%= simple_form_for :mail_request, url: invite_externals_path(@artwork), html: {class: 'text-left'} do |f| %>
+        <select class="emails-input w-100" name="emails[]" multiple="true" id="emails">
+        </select>
+        <%= f.input :message, label: 'Custom Message', as: :text, label_html: { class: 'text-center d-block mt-2' } %>
+        <div class="optional-invite text-center">
+          <%= f.submit "Send Request", class: 'submit-artwork mb-3', disabled: true %>
+          <a href="<%= artwork_path(@artwork) %>" class="redirect-artwork text-decoration-none">Back to artwork</a>
+        </div>
       <% end %>
     </div>
     

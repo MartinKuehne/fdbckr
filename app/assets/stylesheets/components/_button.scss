@@ -16,6 +16,39 @@
   cursor: pointer;
 }
 
+.submit-artwork {
+  display: inline-block;
+  padding: 0.5em 2em;
+  border: 0.1em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  border-radius: 8px;
+  background-color: #E8D7FF;
+  cursor: pointer;
+}
+
+.submit-artwork[disabled]{
+  border: 1px solid #b5a3cc;
+  background-color: #dbd5e2;
+  color: #666666;
+}
+
+.redirect-artwork {
+  color: #9d7aca;
+  margin-left: 10px;
+}
+
+.redirect-artwork:hover {
+  color: #252525;
+}
+
 .btn-send-feedback {
   display: inline-block;
   padding: 0.5em 3em;
