@@ -15,4 +15,8 @@ class PagesController < ApplicationController
   def landing
     @user = User.new
   end
+
+  def share
+    @artwork = Artwork.find(params[:artwork_id])
+  end
 end

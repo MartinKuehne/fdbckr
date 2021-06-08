@@ -21,10 +21,14 @@ class ArtworksController < ApplicationController
     @marked_comments = @marked_comments_i.sort_by(&:created_at).reverse
   end
 
+  def discover
+    @public_artworks = Artwork.where(privacy: false).order(created_at: :desc)
+  end
+
   def new
     @artwork = Artwork.new
   end
-
+  
   def create
     @artwork = Artwork.new(artwork_params)
     @artwork.user = current_user
@@ -34,8 +38,7 @@ class ArtworksController < ApplicationController
       @user_ids&.each do |id| 
         FeedbackRequest.create(user_id: id, artwork: @artwork)
       end
-      redirect_to share_path
-      # artwork_path(@artwork)
+      redirect_to share_path(artwork_id: @artwork.id)
     else
       render :new
     end

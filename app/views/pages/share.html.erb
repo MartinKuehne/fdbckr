@@ -1,5 +1,16 @@
 <div class="share-ctn">
   <div class="info-box">
-  <h2>Share your artwork</h2>
+    <h2 style="margin-top: 120px">Share your artwork</h2>
+    <div class="row d-flex justify-content-center mt-5">
+      <p>To share your work, please enter the emails and send a custom message to your friends</p>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mt-1">
+      <%= simple_form_for :mail_request, url: invite_externals_path(@artwork) do |f| %>
+        <select class="emails-input w-100" name="emails[]" multiple="true"></select>
+        <%= f.input :message %>
+        <%= f.submit class: 'button-submit' %>
+      <% end %>
+    </div>
+    
   </div>
 </div>

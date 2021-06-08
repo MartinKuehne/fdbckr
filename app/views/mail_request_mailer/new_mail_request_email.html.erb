@@ -1,0 +1,18 @@
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Feedbckr - You got a new feedback request from <%= @artwork.user.first_name %> <%= @artwork.user.last_name %></p>
+    <p>
+    Request details<br>
+    --------------------------
+    </p>
+    <p>Name: <%= @artwork.user.first_name %> <%= @artwork.user.last_name %></p>
+    <p>Username: <%= @artwork.user.username %></p>
+    <p>Email: <%= @artwork.user.email %></p>
+    <p>
+    Message:<br>
+    ----------
+    </p>
+    <p><%= @message %></p>
+  </body>
