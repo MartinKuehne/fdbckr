@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'artworks#index'
   get '/profile', to: 'pages#profile'
-  get '/share', to: 'pages#share'
+  get '/share/:artwork_id', to: 'pages#share', as: 'share'
+  post '/mail_request/:artwork_id', to: 'mail_requests#invite_externals', as: 'invite_externals'
   get '/brandguidelines', to: 'pages#brandguidelines'
   get '/landing', to: 'pages#landing'
   get '/users/:id/friends', to: 'users#friends', as: 'friends'

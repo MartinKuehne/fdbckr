@@ -28,7 +28,7 @@ class ArtworksController < ApplicationController
   def new
     @artwork = Artwork.new
   end
-
+  
   def create
     @artwork = Artwork.new(artwork_params)
     @artwork.user = current_user
@@ -40,8 +40,7 @@ class ArtworksController < ApplicationController
           FeedbackRequest.create(user_id: id, artwork: @artwork)
         end
       end
-      redirect_to share_path
-      # artwork_path(@artwork)
+      redirect_to share_path(artwork_id: @artwork.id)
     else
       render :new
     end
