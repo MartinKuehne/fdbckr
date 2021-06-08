@@ -6,13 +6,7 @@
     </div>
     <div class="row d-flex align-items-center justify-content-center mt-1">
       <%= simple_form_for :mail_request, url: invite_externals_path(@artwork) do |f| %>
-      
-      <%# own input, f.input might not work %>
-      <%# once I click enter the email appears below in a div and is saved %>
-      <%# how do I conntect the share view with the mailer controller %>
-
-        <%= f.input :emails, html: { class: "emails-input"}, label: 'Enter Emails' %>
-        
+        <select class="emails-input w-100" name="emails[]" multiple="true"></select>
         <%= f.input :message %>
         <%= f.submit class: 'button-submit' %>
       <% end %>

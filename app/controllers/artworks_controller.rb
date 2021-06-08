@@ -34,7 +34,7 @@ class ArtworksController < ApplicationController
           FeedbackRequest.create(user_id: id, artwork: @artwork)
         end
       end
-      redirect_to share_path, artwork_id: @artwork.id # not working (id does not exists yet? error message  missing required keys: [:artwork_id])
+      redirect_to share_path(artwork_id: @artwork.id)
     else
       render :new
     end
