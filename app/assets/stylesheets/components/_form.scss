@@ -71,6 +71,10 @@
   border: 0.1em solid #bdc7c9; 
 }
 
+abbr[title], abbr[data-original-title] {
+  text-decoration: none !important;
+}
+
 .feedbacker-input {
   margin: 0 !important;
 }
