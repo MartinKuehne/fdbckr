@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  get 'card/:id', to: 'comments#card', as: :card
+
   # Please do NOT delete (it will break the home page)
   post '/banana', to: 'comments#create_index', as: :create_comments_index
   # ⚠️⚠️⚠️

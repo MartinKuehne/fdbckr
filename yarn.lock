@@ -6920,6 +6920,11 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+stimulus-popover@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-popover/-/stimulus-popover-5.0.0.tgz#a3688d11ac1cf4bf92c9969046523bab9f825a6a"
+  integrity sha512-lMweuAveXMiVlh/klmbgzS9PLVrUnFOmGxAtIj34byl4grK8YBtHWiZ4k2JiugNW7VYoGBue8TrHfMccUPzU8Q==
+
 stimulus@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-2.0.0.tgz#713c8b91a72ef90914b90955f0e705f004403047"

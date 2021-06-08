@@ -22,8 +22,8 @@ const input = document.querySelector('.comment-field')
       console.log(event)
       const element = document.createElement('i');
       element.className = 'far fa-dot-circle marker route-pin';
-      element.style.left = `${event.offsetX - 7}px`
-      element.style.top = `${event.offsetY + 7}px`
+      element.style.left = `${event.offsetX - 30}px`
+      element.style.top = `${event.offsetY - 15}px`
       wrapper.appendChild(element)
       
       const hidden_x = document.getElementById('comment_x_offset')
