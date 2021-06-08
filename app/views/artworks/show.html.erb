@@ -8,10 +8,10 @@
         <h1><%= @artwork.title %> </h1>
         <p>@<%= link_to @artwork.user.username, profile_path(@artwork.user) %></p>
       </div>
-      <div class="button-wrapper-follow">
-        <%= button_to 'Follow', user_friendships_path(@artwork.user), class: 'btn-send-follow', method: :post %>
-        <a href="#" class="btn-shadow-follow">Follow</a>
-      </div>
+        <div class="btn-wrapper-follow">
+          <%= link_to 'Follow', user_friendships_path(@artwork.user), class: 'btn-follow', method: :post %>
+          <a href="#" class="btn-shadow-follow">Follow</a>
+        </div>
     </div>
   </div>
 
