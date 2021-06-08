@@ -11,7 +11,7 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Select artwork' %>
     </div>
     <div class="col-8 p-5">
-      <div class="form-input">
+      <div class="form-input" sytle="border-radius: 4px">
         <%= f.input :title, label: 'Title', placeholder: "Title" %>
         <%= f.input :description, label: 'Description', placeholder: "What is your work about?" %>
         <%= f.input :request, placeholder: "Is there any specific feedback you are looking for?" %>
@@ -36,9 +36,9 @@
       </div>
       <%# add external via email through an popup with button below (Add external) %>
       <%# <div id="feedbacker-selection"></div> %>
-      <div class="d-flex flex-row-reverse submit-input mt-4 mr-5 align-items-center">
+      <div class="d-flex flex-row-reverse submit-input mt-4 align-items-center">
       <%# change the button to button primary with hover effect %>
-        <%= f.submit class: 'button-primary' %>
+        <%= f.submit class: 'submit-artwork ml-5' %>
         <%= f.input :privacy, as: :boolean, label_html: { class: "toggle-label mt-3" }, input_html: { class: "toggle"}, label: 'Private' %>
       </div>
     </div>
