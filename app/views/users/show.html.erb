@@ -3,7 +3,7 @@
   <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
     <div class="d-flex">
       <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @user.photo.key, class:"profile-home", height: 300, width: 400, crop: :fill %>
       <% else %>
         <img src="https://source.unsplash.com/EdAVNRvUVH4/150x150" class="img-thumbnail" alt="Profile Picture ">
       <% end %>
@@ -26,9 +26,10 @@
 
 
 <!--Grid row-->
-    <div class="grid">
-      <div class="gutter-size"></div>
-      <% @user.public_artworks.each do |artwork| %>
+  <div class="grid">
+    <div class="gutter-size"></div>
+    <%# @user.public_artworks.each do |artwork| %>
+      <% @all_artworks.each do |artwork| %>
       <% artwork.photos.each do |photo| %>
       <div class="grid-item">
       <%= cl_image_tag photo.key, class: "w-100" %>

@@ -1,15 +1,24 @@
 import Masonry from 'masonry-layout';
+import $ from "jquery";
+import jQueryBridget from 'jquery-bridget';
+import imagesLoaded from 'imagesloaded';
+jQueryBridget('masonry', Masonry, $);
+jQueryBridget( 'imagesLoaded', imagesLoaded, $ );
 
 const initImageGrid = () => {
-  const masonElement = document.querySelector(".grid")
+  const masonElement = $('.grid')
+  console.log(masonElement)
   if (masonElement) {
-    new Masonry( masonElement, {
-      // set itemSelector so .grid-sizer is not used in layout
-      itemSelector: '.grid-item',
-      // use element for option
-      gutter: '.gutter-size',
-      percentPosition: true
-    })
+    masonElement.imagesLoaded( function() {
+    // init Masonry after all images have loaded
+      masonElement.masonry({
+        // options...
+        itemSelector: '.grid-item',
+        // use element for option
+        gutter: '.gutter-size',
+        percentPosition: true
+      });
+    });
   }
 }
 

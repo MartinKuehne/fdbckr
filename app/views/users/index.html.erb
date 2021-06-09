@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h1 class="center-headers" > Discover Artists </h1>
+    <div class="user-index-grid">
+      <% @users.shuffle.each do |user| %>
+          <div class="user-index-image-container">
+            <a href="<%= user_path(user) %>" class="hover-img-container-3">
+            <% if user.photo.attached? %>
+              <%= cl_image_tag(user.photo.key, gravity: :face, crop: :thumb, height: 250, width: 250, class: "user-index-image") %>
+            <% elsif user.avatar %>
+              <img src=<%= user.avatar %> alt="avatar" class="user-index-image">
+            <% else %>
+            <p>Picture not found</p>
+            <% end %>
+
+              <div class="overlay">
+                @<%= user.username %><br>
+                <%= user.artworks.length %> Artworks uploaded
+              </div>
+            </a>
+
+          </div>
+      <% end %>
+    </div>
+</div>
