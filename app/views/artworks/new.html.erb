@@ -1,6 +1,6 @@
 <section>
   <%= simple_form_for @artwork, html: { class: "upload d-flex justify-content-evenly"} do |f| %>
-    <div class="col-4 p-5">
+    <div class="col-4 col-md-4 p-5">
       <div class='scroll-bar-wrapper'> 
         <div class='scroll-bar'> </div>
       </div>
@@ -10,7 +10,7 @@
       <%  %>
       <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Select artwork' %>
     </div>
-    <div class="col-8 p-5">
+    <div class="col-8 col-md-8 p-5">
       <div class="form-input" sytle="border-radius: 4px">
         <%= f.input :title, label: 'Title', placeholder: "Title" %>
         <%= f.input :description, label: 'Description', placeholder: "What is your work about?" %>

@@ -32,7 +32,7 @@ import { initPlaceMarker } from './place_marker';
 import { initPrivacy } from './privacy_toggle';
 import { initSendFeedback} from './send_feedback';
 import { initScroll } from './scrollbar_img';
-import { initEmails } from './emails';
+import { initEmails, initDisable } from './emails';
 import { initImageGrid } from './image_grid';
 
 document.addEventListener('turbolinks:load', () => {
@@ -43,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   initPrivacy();
   initScroll();
   initEmails();
+  initDisable();
   initImageGrid();
 });
 

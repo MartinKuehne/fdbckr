@@ -1,6 +1,6 @@
 <div class="share-ctn">
   <div class="info-box">
-    <h2 style="margin-top: 80px">Congrats, you successfully submitted your work!</h2>
+    <h2 style="margin-top: 80px; font-family: 'Roboto',sans-serif">Congrats, you successfully submitted your work!</h2>
     <div class="justify-content-center mt-4 mb-4">
         <div class="row justify-content-center mt-4">
           <% @artwork.photos.each do |image| %>
@@ -15,10 +15,10 @@
       <%= simple_form_for :mail_request, url: invite_externals_path(@artwork), html: {class: 'text-left'} do |f| %>
         <select class="emails-input w-100" name="emails[]" multiple="true" id="emails">
         </select>
-        <%= f.input :message, label: 'Custom Message', as: :text, label_html: { class: 'text-center d-block mt-2' } %>
+        <%= f.input :message, label: 'Custom Message', as: :text, label_html: { class: 'text-center w-100 d-block mt-2' } %>
         <div class="optional-invite text-center">
-          <%= f.submit "Send Request", class: 'submit-artwork mb-3', disabled: true %>
-          <a href="<%= artwork_path(@artwork) %>" class="redirect-artwork text-decoration-none">Back to artwork</a>
+          <%= f.submit "Send Request", class: 'submit-artwork mb-3 row', disabled: true %>
+          <a href="<%= artwork_path(@artwork) %>" class="redirect-artwork text-decoration-none row justify-content-center">Back to artwork</a>
         </div>
       <% end %>
     </div>

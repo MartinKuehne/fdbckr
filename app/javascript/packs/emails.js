@@ -2,6 +2,21 @@ import $ from 'jquery';
 import 'select2';
 import "select2/dist/css/select2.css"
 
+const initDisable = () => {
+  /* when blurred count the selected elements and if bigger zero do nothing, otherwise disable */
+  const textArea = document.querySelector('.select2-search__field')
+  const checkInput = document.querySelector('.emails-input.select2-hidden-accessible')
+  textArea.addEventListener('blur', (e) => {
+    let count = 0
+    const button = document.querySelector('.submit-artwork')
+    const optionInput = document.querySelectorAll('option')
+    count = optionInput.length
+    if (count === 0) {
+      button.disabled = true
+    }
+  })
+}
+
 const initEmails = () => {
   $(".emails-input").select2({
     tags: true,
@@ -21,4 +36,4 @@ const initEmails = () => {
   });
 };
 
-export { initEmails }
+export { initEmails, initDisable }
