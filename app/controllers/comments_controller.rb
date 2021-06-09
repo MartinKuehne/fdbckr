@@ -25,6 +25,11 @@ class CommentsController < ApplicationController
     redirect_to root_path(@artwork, new_comment_id: @comment.id, anchor: "artwork-image-#{@artwork.id}")
   end
 
+  def card
+    @comment = Comment.find(params[:id])
+    render partial: 'artworks/popover_comment', locals: { comment: @comment }
+  end
+
   private
 
   def comment_params
