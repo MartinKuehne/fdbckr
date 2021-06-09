@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
   root to: 'artworks#index'
   get '/profile', to: 'pages#profile'
   get '/share/:artwork_id', to: 'pages#share', as: 'share'
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   get 'card/:id', to: 'comments#card', as: :card
 
   # Please do NOT delete (it will break the home page)
-  #post '/banana', to: 'comments#create_index', as: :create_comments_index
+  # post '/banana', to: 'comments#create_index', as: :create_comments_index
   # ⚠️⚠️⚠️
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

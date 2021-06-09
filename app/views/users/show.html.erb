@@ -15,9 +15,11 @@
       <div>📍 <%= @user.location %></div>
     </div>
 
-    <div>
-      <%= link_to 'Follow', user_friendships_path(params[:id]), class: 'button-primary', method: :post %>
-    </div>
+    <% unless current_user.friends.include?(@user) || current_user == @user %>
+      <div>
+        <%= link_to 'Follow', user_friendships_path(params[:id]), class: 'button-primary', method: :post %>
+      </div>
+    <% end %>
   </div>
 
  <div class="d-flex justify-content-center">
