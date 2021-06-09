@@ -17,5 +17,12 @@ Rails.application.routes.draw do
   resources :artworks, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create]
   end
+
+  get 'card/:id', to: 'comments#card', as: :card
+
+  # Please do NOT delete (it will break the home page)
+  post '/banana', to: 'comments#create_index', as: :create_comments_index
+  # ⚠️⚠️⚠️
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

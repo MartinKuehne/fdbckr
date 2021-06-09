@@ -14,29 +14,35 @@
           <a href="#" class="btn-shadow-follow">Follow</a>
         </div>
       </div>
-    </div>
 
     <div class="d-flex justify-content-center m-3">
       <p class="centered-content"><%= @artwork.description %></p>
     </div>
 
-    <div class="d-flex justify-content-center">
-      <% @artwork.photos.each do |image|%>
-        <div class="image-wrapper">
-          <%= cl_image_tag image.key, class: 'mt-3 mb-3', :alt => "artwork", id: "artwork", style: 'object-fit: cover; max-width: 1200px; max-height: 95vh' %>
-          <% @marked_comments.each do |comment| %>
-            <i class="fas fa-comment marker artwork", style="top: <%= comment.y_offset%>px; left: <%=comment.x_offset%>px"></i>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-    
-      <div class="container d-flex mt-3">
-        <%= cl_image_tag current_user.photo.key, class: 'profile mr-3' %>
-        <%= render  "comment_form" %>
+  <div class="d-flex justify-content-center">
+    <% @artwork.photos.each do |image|%>
+      <div class="image-wrapper">
+        <%= cl_image_tag image.key, class: 'mt-3 mb-3', :alt => "artwork", id: "artwork", style: 'object-fit: cover; max-width: 1200px; max-height: 95vh' %>
+        <% @marked_comments.each do |comment| %>
+          <div
+            data-controller="popover"
+            data-popover-url-value="<%= card_path(comment.id) %>"
+          >
+            <a data-action="mouseover->popover#show mouseout->popover#hide">
+              <i class="far fa-dot-circle marker artwork route-pin", style="top: <%= comment.y_offset%>px; left: <%=comment.x_offset%>px"></i>
+            </a>
+          </div>
+        <% end %>
       </div>
+    <% end %>
+  </div>
+  
+    <div class="container d-flex mt-3">
+      <%= cl_image_tag current_user.photo.key, class: 'profile mr-3' %>
+      <%= render  "comment_form" %>
+    </div>
 
-    <ul class="nav justify-content-center nav-tabs mt-3" id="myTab" role="tablist">
+  <ul class="nav justify-content-center nav-tabs mt-3" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="general_comments-tab" data-bs-toggle="tab" data-bs-target="#general_comments" type="button" role="tab" aria-controls="general_comments" aria-selected="true">General comments</button>
     </li>
