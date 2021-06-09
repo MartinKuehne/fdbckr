@@ -120,7 +120,7 @@
   right: 5px;
 }
 
-.btn-send-follow {
+.btn-follow {
   display: inline-block;
   padding: 0.5em 3em;
   border: 0.12em solid #000000;
@@ -138,16 +138,18 @@
   position: absolute;
 }
 
-.btn-send-follow:hover {
+.btn-follow:hover {
   top: 5px;
   right: 5px;
+  color: black;
+  text-decoration: none;
 }
 
-.btn-send-follow:active {
+.btn-follow:active {
   background-color: darken(#D7ECFF, 10%);
 }
 
-.button-wrapper-follow {
+.btn-wrapper-follow {
   // width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -172,4 +174,125 @@
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+.btn-follow {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: #D7ECFF;
+  position: absolute;
+}
+
+.btn-follow:hover {
+  top: 5px;
+  right: 5px;
+  color: black;
+  text-decoration: none;
+}
+
+.btn-follow:active {
+  background-color: darken(#D7ECFF, 10%);
+}
+
+.btn-wrapper-follow {
+  // width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.btn-shadow-follow {
+  display: block;
+  content: 'Follow';
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+  z-index: -1;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+
+
+// NAVBAR BUTTON
+
+.btn-upload {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: #E8D7FF;
+  position: absolute;
+  z-index: 1;
+  width: 160px;
+}
+
+.btn-upload:hover {
+  top: 5px;
+  right: 5px;
+  color: black;
+  text-decoration: none;
+}
+
+.btn-upload:active {
+  background-color: darken(#E8D7FF, 10%);
+}
+
+.btn-wrapper-upload {
+  // width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.btn-shadow-upload {
+  display: block;
+  content: 'Upload your art';
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+  // z-index: 1;
+  position: relative;
+  top: 5px;
+  right: 5px;
+  width: 160px;
 }

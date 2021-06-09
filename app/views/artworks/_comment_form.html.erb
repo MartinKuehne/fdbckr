@@ -1,5 +1,5 @@
 <%= simple_form_for [@artwork, @comment], html: { class: 'd-flex flex-column flex-grow-1' } do |f| %>
-  <%= f.input :content, input_html: { class: 'flex-grow-1' }, placeholder: 'What would you like to say about this piece?', label: false %>
+  <%= f.input :content, input_html: { class: 'flex-grow-1 comment-field' }, placeholder: 'What would you like to say about this piece?', label: false %>
   <div class="button-wrapper-feedback">
     <%= f.submit value: "Send feedback", class: 'btn-send-feedback justify-content-center mb-3 send-feedback', 'data-disable-with' => "Send feedback" %>
     <a href="#" class="btn-shadow-feedback">Send feedback</a>
