@@ -21,32 +21,6 @@
       <p class="centered-content"><%= @artwork.description %></p>
     </div>
 
-    <% if @artwork.user == current_user %>
-      <div>
-        <%= simple_form_for @artwork, html: { class: "upload d-flex justify-content-evenly"} do |f| %>
-          <div class="row feedbacker-input">
-            <%= simple_fields_for :feedback_requests do |fr|%>
-            <%= f.input :user_id,
-              collection: current_user.friends.map { |user| [ "#{user.first_name} #{user.last_name}", user.id] },
-              value: @artwork.feedback_requests.map { |fr| fr.user.id },
-              include_hidden: false,
-              label: "Select feedbackers",
-              wrapper_html: { class: 'w-100' },
-              input_html: {
-              data: {
-                controller: "searchable-select",
-                searchable_select_target: 'input'
-              },
-              multiple: true
-              } 
-              %>
-            <% end %>
-          </div>
-          <%= f.submit 'Select additional feedbackers'%>
-        <% end %>
-      </div>
-    <% end %>
-
   <div class="d-flex justify-content-center">
     <% @artwork.photos.each do |image|%>
       <div class="image-wrapper">
