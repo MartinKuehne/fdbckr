@@ -3,28 +3,28 @@
     <div class="col-m-12">
       <div class="d-flex mt-5">
         <% if @artwork.user.photo.key %>
-          <%= cl_image_tag @artwork.user.photo.key, class: 'profile' %>
+          <%= cl_image_tag @artwork.user.photo.key, class: 'profile mr-2' %>
         <% end %>
         <div class="flex-grow-1 mx-3 top-description">
           <h1><%= @artwork.title %> </h1>
           <p>@<%= link_to @artwork.user.username, profile_path(@artwork.user) %></p>
         </div>
         <% unless @artwork.user.friends.include?(current_user) || current_user == @artwork.user %>
-          <div class="button-wrapper-follow">
-            <%= link_to 'Follow', user_friendships_path(@artwork.user), class: 'button-primary-shadow', method: :post %>
+          <div class="btn-wrapper-follow">
+            <%= link_to 'Follow', user_friendships_path(@artwork.user), class: 'btn-follow', method: :post %>
             <a href="#" class="btn-shadow-follow">Follow</a>
           </div>
         <% end %>
       </div>
 
-    <div class="d-flex justify-content-center m-3">
+    <div class="d-flex justify-content-center">
       <p class="centered-content"><%= @artwork.description %></p>
     </div>
 
   <div class="d-flex justify-content-center">
     <% @artwork.photos.each do |image|%>
       <div class="image-wrapper">
-        <%= cl_image_tag image.key, class: 'mt-3 mb-3', :alt => "artwork", id: "artwork", style: 'object-fit: cover; max-width: 1200px; max-height: 95vh' %>
+        <%= cl_image_tag image.key, class: 'mb-3', :alt => "artwork", id: "artwork", style: 'object-fit: cover; max-width: 920px; max-height: 80vh' %>
         <% @marked_comments.each do |comment| %>
           <div
             data-controller="popover"
@@ -39,26 +39,34 @@
     <% end %>
   </div>
   
-    <div class="container d-flex mt-3">
-      <%= cl_image_tag current_user.photo.key, class: 'profile mr-3' %>
-      <%= render  "comment_form" %>
-    </div>
-
-  <ul class="nav justify-content-center nav-tabs mt-3" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="general_comments-tab" data-bs-toggle="tab" data-bs-target="#general_comments" type="button" role="tab" aria-controls="general_comments" aria-selected="true">General comments</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="marked_comments-tab" data-bs-toggle="tab" data-bs-target="#marked_comments" type="button" role="tab" aria-controls="marked_comments" aria-selected="false">Marked comments</button>
-    </li>
-  </ul>
-
-    <div class="tab-content mb-5" id="myTabContent">
-      <div class="tab-pane fade show active" id="general_comments" role="tabpanel" aria-labelledby="general_comments-tab">
-        <%= render  "general_comments" %>  
+  <div class="row justify-content-center">
+    <div class="col-sm-10 my-2">
+      <div class="container d-flex p-0">
+        <%= cl_image_tag current_user.photo.key, class: 'profile mr-2' %>
+        <%= render  "comment_form" %>
       </div>
-      <div class="tab-pane fade" id="marked_comments" role="tabpanel" aria-labelledby="marked_comments-tab">
-        <%= render  "marked_comments" %> 
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-10 my-2">
+      <ul class="nav justify-content-center nav-tabs mt-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="general_comments-tab" data-bs-toggle="tab" data-bs-target="#general_comments" type="button" role="tab" aria-controls="general_comments" aria-selected="true">General comments</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="marked_comments-tab" data-bs-toggle="tab" data-bs-target="#marked_comments" type="button" role="tab" aria-controls="marked_comments" aria-selected="false">Marked comments</button>
+        </li>
+      </ul>
+
+        <div class="tab-content mb-5" id="myTabContent">
+          <div class="tab-pane fade show active" id="general_comments" role="tabpanel" aria-labelledby="general_comments-tab">
+            <%= render  "general_comments" %>
+          </div>
+          <div class="tab-pane fade" id="marked_comments" role="tabpanel" aria-labelledby="marked_comments-tab">
+            <%= render  "marked_comments" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
