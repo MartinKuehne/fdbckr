@@ -22,7 +22,7 @@
           @<%= link_to User.find(request.receiver_id).username, user_path(request.receiver_id) %> <br>
         </div>
         <div class="container ml-3 top-description d-flex align-items-center">
-          <%= link_to 'Accept', Waccept_friendship_path(request), class: 'button-primary', method: :patch %>
+          <%= link_to 'Accept', accept_friendship_path(request), class: 'button-primary', method: :patch %>
           <%= link_to 'Decline', decline_friendship_path(request), class: 'button-secondary', method: :patch %>
         </div>
       </div>
