@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
   root to: 'artworks#index'
   get '/profile', to: 'pages#profile'
   get '/share/:artwork_id', to: 'pages#share', as: 'share'
