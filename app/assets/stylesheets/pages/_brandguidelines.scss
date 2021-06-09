@@ -147,12 +147,6 @@ a.button-secondary-shadow:hover {
 
 /* Avatar/Profile Picture */
 
-img.profile {
-  object-fit: cover;
-  height: 75px;
-  width: 75px;
-}
-
 img.profile-home {
   object-fit: cover;
   height: 150px;
@@ -208,7 +202,7 @@ p.centered-content {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 26px;
   text-align: center;
 }
@@ -216,7 +210,7 @@ p.centered-content {
 /* Top Description Section */
 .top-description {
   h1 {
-    font-size: 2.3rem !important;
+    font-size: 2rem !important;
     font-weight: 700 !important;
     font-family: 'Roboto',sans-serif !important;
     margin-bottom: 0px !important;
