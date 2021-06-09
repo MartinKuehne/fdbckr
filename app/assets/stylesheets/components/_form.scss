@@ -10,6 +10,18 @@
   overflow: scroll;
 }
 
+.modal-dialog {
+  width: 300px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #d9eafa;
+}
+
+.modal-footer {
+  border-top: 1px solid #d9eafa;
+}
+
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
 }
