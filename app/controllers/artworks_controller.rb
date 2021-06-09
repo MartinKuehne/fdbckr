@@ -1,6 +1,7 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :destroy]
   before_action :set_user_ids, only: [:create]
+  attr_reader :privacy
   # skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
@@ -15,6 +16,8 @@ class ArtworksController < ApplicationController
   end
 
   def show
+    authorize @artwork
+
     @comment = Comment.new
     @general_comments_i, @marked_comments_i = @artwork.comments.partition { |comment| comment.x_offset.nil? || comment.y_offset.nil? }
     @general_comments = @general_comments_i.sort_by!(&:created_at).reverse

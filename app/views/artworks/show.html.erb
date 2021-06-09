@@ -1,23 +1,23 @@
-<div class="container">
-  <div class="col-m-12">
-    <div class="d-flex mt-5">
-      <% if @artwork.user.photo.key %>
-        <%= cl_image_tag @artwork.user.photo.key, class: 'profile' %>
-      <% end %>
-      <div class="flex-grow-1 mx-3 top-description">
-        <h1><%= @artwork.title %></h1>
-        <p>@<%= link_to @artwork.user.username, profile_path(@artwork.user) %></p>
-      </div>
-        <div class="btn-wrapper-follow">
-          <%= link_to 'Follow', user_friendships_path(@artwork.user), class: 'btn-follow', method: :post %>
+<% if policy(@artwork).show? %>
+  <div class="container">
+    <div class="col-m-12">
+      <div class="d-flex mt-5">
+        <% if @artwork.user.photo.key %>
+          <%= cl_image_tag @artwork.user.photo.key, class: 'profile' %>
+        <% end %>
+        <div class="flex-grow-1 mx-3 top-description">
+          <h1><%= @artwork.title %> </h1>
+          <p>@<%= link_to @artwork.user.username, profile_path(@artwork.user) %></p>
+        </div>
+        <div class="button-wrapper-follow">
+          <%= link_to 'Follow', user_friendships_path(@artwork.user), class: 'button-primary-shadow', method: :post %>
           <a href="#" class="btn-shadow-follow">Follow</a>
         </div>
-    </div>
-  </div>
+      </div>
 
-  <div class="d-flex justify-content-center m-3">
-    <p class="centered-content"><%= @artwork.description %></p>
-  </div>
+    <div class="d-flex justify-content-center m-3">
+      <p class="centered-content"><%= @artwork.description %></p>
+    </div>
 
   <div class="d-flex justify-content-center">
     <% @artwork.photos.each do |image|%>
@@ -51,12 +51,13 @@
     </li>
   </ul>
 
-  <div class="tab-content mb-5" id="myTabContent">
-    <div class="tab-pane fade show active" id="general_comments" role="tabpanel" aria-labelledby="general_comments-tab">
-      <%= render  "general_comments" %>  
-    </div>
-    <div class="tab-pane fade" id="marked_comments" role="tabpanel" aria-labelledby="marked_comments-tab">
-      <%= render  "marked_comments" %> 
+    <div class="tab-content mb-5" id="myTabContent">
+      <div class="tab-pane fade show active" id="general_comments" role="tabpanel" aria-labelledby="general_comments-tab">
+        <%= render  "general_comments" %>  
+      </div>
+      <div class="tab-pane fade" id="marked_comments" role="tabpanel" aria-labelledby="marked_comments-tab">
+        <%= render  "marked_comments" %> 
+      </div>
     </div>
   </div>
-</div>
+<% end %>
