@@ -11,15 +11,22 @@
 }
 
 .modal-dialog {
-  width: 300px;
+  width: 600px;
 }
 
 .modal-header {
   border-bottom: 1px solid #d9eafa;
 }
 
+.modal-body {
+  align-items: center;
+  padding: 50px 0 50px 0;
+}
+
 .modal-footer {
   border-top: 1px solid #d9eafa;
+  height: 80px;
+  display: block !important;
 }
 
 .hidden-scrollbar::-webkit-scrollbar {
