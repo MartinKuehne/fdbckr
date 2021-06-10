@@ -1,12 +1,12 @@
 <div class="container">
   <h1 class="text-center mt-3">Your Friends</h1>
-  
+
   <% if current_user.friends.any? %>
     <div class="d-flex justify-content-center mt-3 flex-wrap mb-3">
       <% current_user.friends.each do |friend| %>
         <div class="d-flex flex-column text-center m-1 mr-3 ml-3">
           <a href="/users/<%= friend.id %>">
-            <%= cl_image_tag friend.photo.key, class: 'profile-friends' %>
+            <%= cl_image_tag friend.photo.key, width: 120, height: 120, crop: :thumb, gravity: :face, class: 'profile-friends' %>
           </a>
           <%= link_to "@" + friend.username, user_path(friend.id), id:'dark-link'%>
         </div>
@@ -18,7 +18,7 @@
     <h3 class="text-center mt-3">Pending Friend Requests</h3>
     <% current_user.pending_invitations.each do |request| %>
       <div class="d-flex mt-3">
-        <%= cl_image_tag User.find(request.asker_id).photo.key, class: 'profile-friends' %>
+        <%= cl_image_tag User.find(request.asker_id).photo.key, width: 120, height: 120, crop: :thumb, gravity: :face, class: 'profile-friends' %>
         <div class="container ml-3 top-description d-flex align-items-center">
           @<%= link_to User.find(request.asker_id).username, user_path(request.asker_id), id:'dark-link' %> <br>
         </div>

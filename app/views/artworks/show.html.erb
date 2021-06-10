@@ -3,7 +3,7 @@
     <div class="col-m-12">
       <div class="d-flex mt-5 mb-3">
         <% if @artwork.user.photo.key %>
-          <%= cl_image_tag @artwork.user.photo.key, class: 'profile mr-2' %>
+          <%= cl_image_tag @artwork.user.photo.key, width: 62, height: 62, crop: :thumb, gravity: :face, class: 'profile mr-2' %>
         <% end %>
         <div class="flex-grow-1 mx-3 top-description">
           <h1><%= @artwork.title %> </h1>
@@ -51,7 +51,9 @@
       <div class="row justify-content-center">
         <div class="col-sm-10 my-2">
           <div class="container d-flex p-0">
-            <%= cl_image_tag current_user.photo.key, class: 'profile mr-2' %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, width: 62, height: 62, crop: :thumb, gravity: :face, class: 'profile mr-2' %>
+            <% end %>
             <%= render  "comment_form" %>
           </div>
         </div>
