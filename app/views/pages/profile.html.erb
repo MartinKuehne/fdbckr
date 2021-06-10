@@ -27,6 +27,12 @@
       <% artwork.photos.each do |photo| %>
         <div class="grid-item">
           <%= cl_image_tag photo.key, class: "w-100" %>
+
+          <a href="<%= artwork_path(artwork) %>" class="hover-img-container-2">
+            <div class="overlay">
+              <%= artwork.title %>
+            </div>
+          </a>
         </div>
       <% end %>
     <% end %>

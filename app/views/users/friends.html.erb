@@ -17,9 +17,9 @@
     <h3>Pending Friend Requests</h3>
     <% current_user.pending_invitations.each do |request| %>
       <div class="d-flex mt-3">
-        <%= cl_image_tag User.find(request.receiver_id).photo.key, class: 'profile' %>
+        <%= cl_image_tag User.find(request.asker_id).photo.key, class: 'profile' %>
         <div class="container ml-3 top-description d-flex align-items-center">
-          @<%= link_to User.find(request.receiver_id).username, user_path(request.receiver_id) %> <br>
+          @<%= link_to User.find(request.asker_id).username, user_path(request.asker_id) %> <br>
         </div>
         <div class="container ml-3 top-description d-flex align-items-center">
           <%= link_to 'Accept', accept_friendship_path(request), class: 'button-primary', method: :patch %>
