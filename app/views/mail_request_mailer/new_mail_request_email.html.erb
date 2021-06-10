@@ -4,6 +4,12 @@
   <body>
     <p>Feedbckr - You got a new feedback request from <%= @artwork.user.first_name %> <%= @artwork.user.last_name %></p>
     <p>
+    Link<br>
+    ----------
+    </p>
+    <a href="/artworks/:id">Check out <%= @artwork.user.first_name %>'s latest artwork</a>
+    <%= link_to "Check out #{@artwork.user.first_name}'s latest artwork", artwork_path(@artwork) %>
+    <p>
     Request details<br>
     --------------------------
     </p>
