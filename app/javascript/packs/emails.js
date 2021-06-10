@@ -6,6 +6,7 @@ const initDisable = () => {
   /* when blurred count the selected elements and if bigger zero do nothing, otherwise disable */
   const textArea = document.querySelector('.select2-search__field')
   const checkInput = document.querySelector('.emails-input.select2-hidden-accessible')
+  if (checkInput && textArea) {
   textArea.addEventListener('blur', (e) => {
     let count = 0
     const button = document.querySelector('.submit-artwork')
@@ -14,7 +15,7 @@ const initDisable = () => {
     if (count === 0) {
       button.disabled = true
     }
-  })
+  })}
 }
 
 const initEmails = () => {
