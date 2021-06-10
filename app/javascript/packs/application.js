@@ -34,6 +34,8 @@ import { initSendFeedback} from './send_feedback';
 import { initScroll } from './scrollbar_img';
 import { initEmails, initDisable } from './emails';
 import { initImageGrid } from './image_grid';
+import { initScrollFunction } from './scroll_button';
+import { initTopFunction } from './scroll_button';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -45,6 +47,8 @@ document.addEventListener('turbolinks:load', () => {
   initEmails();
   initDisable();
   initImageGrid();
+  initScrollFunction();
+  initTopFunction();
 });
 
 import "controllers"
