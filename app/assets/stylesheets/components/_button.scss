@@ -294,3 +294,65 @@
   right: 5px;
   width: 160px;
 }
+
+// CREATE ARTWORK BUTTON
+
+.btn-create {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: #E8D7FF;
+  position: absolute;
+  z-index: 1;
+  width: 160px;
+}
+
+.btn-create:hover {
+  top: 5px;
+  right: 5px;
+  color: black;
+  text-decoration: none;
+}
+
+.btn-create:active {
+  background-color: darken(#E8D7FF, 10%);
+}
+
+.button-wrapper-create {
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.btn-shadow-create {
+  display: block;
+  padding: 0.5em 3em;
+  border: 0.12em solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+  // z-index: 1;
+  position: relative;
+  top: 5px;
+  right: 5px;
+  width: 160px;
+}
