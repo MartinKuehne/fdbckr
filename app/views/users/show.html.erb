@@ -16,7 +16,8 @@
     </div>
 
     <div class="d-flex align-items-center">
-      <% if Friendship.where(asker_id: current_user.id, receiver_id: @user.id, status: 'pending') %>
+      <% raise %>
+      <% if Friendship.where(asker_id: current_user.id, receiver_id: @user.id, status: 'pending').any? %>
         <h6>Pending friendship request.</h6>
       <% else %>
         <% unless current_user.friends.include?(@user) || current_user == @user %>
