@@ -53,11 +53,14 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body text-center" style="font-size: 20px">
-                <strong>All set?</strong>
+              <div class="modal-body text-center">
+                <p>Would you like to create this post?</p>
               </div>
               <div class="modal-footer justify-content-center">
-                <%= f.submit 'Sure thing', class: 'submit-confirmation' %>
+                <div class="button-wrapper-create mt-2">
+                   <%= f.submit value: "Create artwork", class: 'btn-create justify-content-center mb-3' %>
+                   <a href="#" class="btn-shadow-create">Create artwork</a>
+                 </div>
               </div>
             </div>
           </div>
