@@ -7,7 +7,7 @@
         <% end %>
         <div class="flex-grow-1 mx-3 top-description">
           <h1><%= @artwork.title %> </h1>
-          <p>@<%= link_to @artwork.user.username, profile_path(@artwork.user) %></p>
+          <p>@<%= link_to @artwork.user.username, users_path(@artwork.user) %></p>
         </div>
         <% unless @artwork.user.friends.include?(current_user) || current_user == @artwork.user %>
           <div class="btn-wrapper-follow">
