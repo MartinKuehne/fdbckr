@@ -1,3 +1,34 @@
 h1 {
   font-size: 48px;
 }
+
+#friends {
+  color: #000 !important;
+  text-decoration: underline;
+}
+
+#friends:hover {
+  font-weight: bold !important;
+}
+
+#dark-link {
+  text-decoration: none;
+  color: #000 !important;
+}
+
+#dark-link:hover {
+  font-weight: bold !important;
+}
+
+img.profile-friends {
+  object-fit: cover;
+  height: 120px;
+  width: 120px;
+}
+
+.top-description a {
+  font-size: 1.2rem !important;
+  font-family: 'Roboto',sans-serif !important;
+  font-weight: 700 !important;
+  color: black !important;
+}

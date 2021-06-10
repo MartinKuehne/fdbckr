@@ -15,7 +15,7 @@
       <div>📍 <%= @user.location %></div>
     </div>
 
-    <% unless current_user.friends.include?(@user) || current_user == @user %>
+    <% unless current_user.friends.include?(@user) || current_user == @user || Friendship.where(asker_id: current_user.id) %>
       <div>
         <%= link_to 'Follow', user_friendships_path(params[:id]), class: 'button-primary', method: :post %>
       </div>
