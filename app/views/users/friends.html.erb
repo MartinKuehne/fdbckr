@@ -2,24 +2,25 @@
   <h1 class="text-center mt-3">Your Friends</h1>
   
   <% if current_user.friends.any? %>
-    <h3>All of your friends</h3>
-    <div class="d-flex mt-3 flex-wrap">
+    <div class="d-flex justify-content-center mt-3 flex-wrap mb-3">
       <% current_user.friends.each do |friend| %>
-        <div class="d-flex align-items-center m-1">
-          <%= cl_image_tag friend.photo.key, class: 'profile' %>
-          <%= link_to friend.username, user_path(friend.id), class: 'ml-3 link-dark'%>
+        <div class="d-flex flex-column text-center m-1 mr-3 ml-3">
+          <a href="/users/<%= friend.id %>">
+            <%= cl_image_tag friend.photo.key, class: 'profile-friends' %>
+          </a>
+          <%= link_to "@" + friend.username, user_path(friend.id), id:'dark-link'%>
         </div>
       <% end %>
     </div>
   <% end %>
 
   <% if current_user.pending_invitations.any? %>
-    <h3>Pending Friend Requests</h3>
+    <h3 class="text-center mt-3">Pending Friend Requests</h3>
     <% current_user.pending_invitations.each do |request| %>
       <div class="d-flex mt-3">
-        <%= cl_image_tag User.find(request.asker_id).photo.key, class: 'profile' %>
+        <%= cl_image_tag User.find(request.asker_id).photo.key, class: 'profile-friends' %>
         <div class="container ml-3 top-description d-flex align-items-center">
-          @<%= link_to User.find(request.asker_id).username, user_path(request.asker_id) %> <br>
+          @<%= link_to User.find(request.asker_id).username, user_path(request.asker_id), id:'dark-link' %> <br>
         </div>
         <div class="container ml-3 top-description d-flex align-items-center">
           <%= link_to 'Accept', accept_friendship_path(request), class: 'button-primary', method: :patch %>
@@ -27,5 +28,12 @@
         </div>
       </div>
     <% end %>
+  <% end %>
+
+  <% if current_user.friends.empty? %>
+    <div class="text-center mt-auto mt-5">
+      <h3 class="mt-5">You don't have any friends yet.</h3>
+      <p>Check out other <%= link_to 'Artists', artists_path, class:'friends' %> you can follow.</p>
+    </div>
   <% end %>
 </div>
