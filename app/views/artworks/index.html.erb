@@ -1,4 +1,8 @@
-<div class="mb-5">
+<div>
+  <i id="myBtn" class="bi bi-arrow-up"></i>
+<%#   <button id="myBtn" class="fas fa-sort-down" title="Go to top"><%# Top %><%# </button> %>
+</div>
+<div class="mb-5" <%# id="scroll-button" %>>
   <% @requested_feedback_artworks.each do |artwork| %>
     <%= render "artworks_card", artwork: artwork, comment: @comment %>
   <% end %>
@@ -6,4 +10,5 @@
   <% @public_artworks.each do |artwork| %>
     <%= render "artworks_card", artwork: artwork, comment: @comment %>
   <% end %>
+<%#   <a id="down" href="#scroll-button"><i id="down-arrow" class="fas fa-sort-down"></i></a> %>
 </div>
