@@ -7,9 +7,7 @@
     Link<br>
     ----------
     </p>
-    <p>
-      <%= link_to "Check out #{@artwork.user.first_name}'s latest artwork", @artwork_path %>
-    </p>
+    <a href="<%= @artwork_path %>">Check out <%= @artwork.user.first_name %>'s latest artwork</a> 
     <p>
     Request details<br>
     --------------------------
