@@ -5,10 +5,10 @@ class MailRequestsController < ApplicationController
     @artwork = Artwork.find(params[:artwork_id])
     @message = params[:mail_request][:message]
     @emails = params[:emails]
-    
+
     if @emails
       @emails.each do |mail|
-        MailRequestMailer.with(artwork: @artwork, message: @message, email: mail).new_mail_request_email.deliver_now
+        MailRequestMailer.with(artwork: @artwork, message: @message, email: mail, artwork_path: artwork_path(@artwork)).new_mail_request_email.deliver_now
         flash.notice = "Your feedbacker request has been sent"
       end
     end
