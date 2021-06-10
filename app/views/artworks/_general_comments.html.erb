@@ -1,5 +1,5 @@
   <% @general_comments.each do |comment| %> 
-      <div class="d-flex mt-3">
+      <div class="d-flex mb-3">
         <%= cl_image_tag comment.user.photo.key, class: 'profile mr-2' %>
         <p class="comment ml-3"><%= comment.content %></p>
       </div>
