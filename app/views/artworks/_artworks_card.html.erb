@@ -17,7 +17,9 @@
     <div class="col-sm-9">
       <div class="container d-flex p-0">
         <% if artwork.id == @created_comment&.artwork&.id %>
-          <%= cl_image_tag current_user.photo.key, class: 'profile mr-2 mt-2' %>
+          <% if current_user.photo.attached? %>
+             <%= cl_image_tag current_user.photo.key, class: 'profile mr-2 mt-2' %>
+          <% end %>
           <div class="text-comment mt-2">
             <em><%= @created_comment.content %></em>
           </div>
@@ -29,7 +31,9 @@
   <div class="row justify-content-center">
     <div class="col-sm-9 my-2">
       <div class="container d-flex p-0">
-        <%= cl_image_tag current_user.photo.key, class: 'profile mr-2' %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: 'profile mr-2' %>
+        <% end %>
         <%= simple_form_for [artwork, @comment], url: create_comments_index_path(artwork), method: :post, remote: true, data: { turbolinks: false }, html: { class: 'd-flex flex-column flex-grow-1', id: "new_comment_#{artwork.id}" } do |f| %>
           <%= f.input :content, input_html: { class: 'flex-grow-1, small-text', id: "comment_content_#{artwork.id}" }, placeholder: 'What would you like to say about this piece?', label: false %>
           <div class="button-wrapper-feedback">
