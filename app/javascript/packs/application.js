@@ -45,6 +45,12 @@ document.addEventListener('turbolinks:load', () => {
   initEmails();
   initDisable();
   initImageGrid();
+  // const input = document.querySelector('.flex-grow-1 .comment-field');
+  // console.log(input);
+  // input.addEventListener('click', (e) => {
+  //   console.log('You have clicked');
+  //   e.currentTarget.autofocus = true;
+  // });
 });
 
 import "controllers"
