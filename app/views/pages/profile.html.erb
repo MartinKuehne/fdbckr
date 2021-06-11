@@ -9,19 +9,19 @@
       <% end %>
       <!-- <img src="https://source.unsplash.com/X6Uj51n5CE8/150x150" class="img-thumbnail" alt="Profile Picture"> -->
     </div>
-    <div class="d-flex flex-column bd-highlight flex-grow-1 ml-2">
-      <div><h1><i>@<%= current_user.username %></i></h1></div>
+    <div class="d-flex flex-column bd-highlight flex-grow-1 ml-4">
+      <div><h1 style="font-size: 32px">@<%= current_user.username %></h1></div>
       <div>👾 <%= current_user.first_name %> <%= current_user.last_name %></div>
       <div>📍 <%= current_user.location %></div>
     </div>
   </div>
 
-  <div class="d-flex justify-content-center">
-    <p class="centered-content"><%= current_user.bio %></p>
+  <div class="bio-seperator d-flex">
+    <p class="centered-content mx-1 mb-2 mt-4"><%= current_user.bio %></p>
   </div>
 
     <!--Grid row-->
-  <div class="grid">
+  <div class="grid mt-4">
     <div class="gutter-size"></div>
     <% current_user.artworks.each do |artwork| %>
       <% artwork.photos.each do |photo| %>
