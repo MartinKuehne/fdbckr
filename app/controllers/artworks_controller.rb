@@ -16,7 +16,7 @@ class ArtworksController < ApplicationController
   end
 
   def show
-    authorize @artwork
+    authorize @artwork unless params[:external]
 
     @comment = Comment.new
     @general_comments_i, @marked_comments_i = @artwork.comments.partition { |comment| comment.x_offset.nil? || comment.y_offset.nil? }
